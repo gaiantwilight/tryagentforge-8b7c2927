@@ -92,51 +92,67 @@ export default function Wellness() {
 
   const pricingTiers = [
     {
-      name: "Starter",
-      price: "$999",
-      setup: "$499 setup",
+      name: "WELLNESS STARTER",
+      price: "$697",
+      period: "/mo",
+      setup: "$497 setup",
       features: [
-        "1 AI Agent (Web chat + SMS)",
+        "1 AI Agent (Web chat OR SMS)",
         "Lead capture + Calendar booking",
         "Booking recovery (missed booking follow-ups)",
-        "1,000 conversations/mo included",
-        "Monthly reporting"
+        "Up to 1,000 conversations/mo included",
+        "Adjustments: every 60 days",
+        "No reporting"
       ]
     },
     {
-      name: "Growth",
-      price: "$1,749",
-      setup: "$749 setup",
+      name: "WELLNESS GROWTH",
+      price: "$997",
+      period: "/mo",
+      setup: "$747 setup",
       features: [
-        "2 AI Agents (e.g., Web + SMS or Web + Voice)",
+        "1 AI Agent (Web chat + SMS, or Web + Voice)",
         "All Starter features",
-        "Advanced booking recovery + multi-channel",
-        "3,000 conversations/mo included",
-        "Monthly reporting"
+        "Advanced booking recovery (multi-channel, escalations)",
+        "Up to 3,000 conversations/mo included",
+        "Adjustments: monthly",
+        "Monthly reporting included"
       ],
       popular: true
     },
     {
-      name: "Pro",
-      price: "$2,449",
+      name: "WELLNESS PRO",
+      price: "$1,497",
+      period: "/mo",
       setup: "$999 setup",
       features: [
-        "2 AI Agents (Web + Voice or custom mix)",
+        "2 AI Agents (Web + SMS + Voice, or custom mix)",
         "All Growth features",
-        "5,000 conversations/mo included",
-        "Custom integrations & analytics",
+        "Up to 5,000 conversations/mo included",
+        "Custom integrations & analytics dashboards",
+        "Adjustments: every 2 weeks",
         "Weekly reporting"
       ]
     },
     {
-      name: "Custom",
+      name: "CUSTOM",
       price: "Contact us",
+      period: "",
       setup: "",
       features: [
         "Unlimited bots",
         "Everything in Pro",
-        "Fully tailored"
+        "Fully tailored integrations & compliance checks"
       ]
+    }
+  ];
+
+  const addOns = [
+    {
+      name: "Voice AI Agent",
+      price: "$599",
+      period: "/mo",
+      description: "flat unlimited"
     }
   ];
 
@@ -432,7 +448,7 @@ export default function Wellness() {
               {pricingTiers.map((tier, index) => (
                 <ScrollReveal key={index} delay={index * 100}>
                   <Card 
-                    className={`p-8 h-full relative cursor-pointer transition-all duration-300 ${
+                    className={`p-6 h-full relative cursor-pointer transition-all duration-300 ${
                       selectedPlan === index
                         ? 'border-aqua bg-gradient-to-br from-aqua/5 to-aqua-glow/10 shadow-lg ring-2 ring-aqua/20' 
                         : tier.popular
@@ -449,19 +465,18 @@ export default function Wellness() {
                       </div>
                     )}
                     
-                    <div className="text-center space-y-4 mb-8">
-                      <h3 className="text-xl font-semibold">{tier.name}</h3>
+                    <div className="text-center space-y-3 mb-6">
+                      <h3 className="text-lg font-bold text-aqua">{tier.name}</h3>
                       <div>
-                        <div className="text-4xl font-bold">{tier.price}</div>
+                        <div className="text-3xl font-bold">{tier.price}<span className="text-lg font-normal text-muted-foreground">{tier.period}</span></div>
                         {tier.setup && <div className="text-sm text-muted-foreground mt-1">{tier.setup}</div>}
-                        <div className="text-sm text-muted-foreground">/month</div>
                       </div>
                     </div>
                     
-                    <ul className="space-y-3 mb-8">
+                    <ul className="space-y-2 mb-6">
                       {tier.features.map((feature, i) => (
-                        <li key={i} className="flex items-start space-x-3">
-                          <CheckCircle className="w-5 h-5 text-aqua flex-shrink-0 mt-0.5" />
+                        <li key={i} className="flex items-start space-x-2">
+                          <CheckCircle className="w-4 h-4 text-aqua flex-shrink-0 mt-0.5" />
                           <span className="text-sm">{feature}</span>
                         </li>
                       ))}
@@ -479,27 +494,31 @@ export default function Wellness() {
                           : 'bg-muted hover:bg-aqua hover:text-background'
                       }`}
                     >
-                      {tier.name === 'Custom' ? 'Contact Sales' : 'Get Started'}
+                      {tier.name === 'CUSTOM' ? 'Contact Sales' : 'Get Started'}
                     </Button>
                   </Card>
                 </ScrollReveal>
               ))}
             </div>
 
+            {/* Add-ons Section */}
             <ScrollReveal>
               <div className="bg-card/50 rounded-2xl p-6 border border-line">
-                <div className="text-center space-y-2 mb-4">
-                  <h4 className="font-semibold">Add-ons</h4>
-                  <div className="inline-flex items-center space-x-2 bg-aqua/10 border border-aqua/20 rounded-lg px-4 py-2">
-                    <span className="text-aqua font-medium">Voice AI Agent</span>
-                    <span className="text-muted-foreground">-</span>
-                    <span className="font-bold">$599/mo</span>
-                    <span className="text-sm text-muted-foreground">(unlimited)</span>
-                  </div>
+                <div className="text-center space-y-4 mb-6">
+                  <h4 className="text-xl font-semibold">ADD-ON</h4>
+                  {addOns.map((addon, index) => (
+                    <div key={index} className="inline-flex items-center space-x-3 bg-aqua/10 border border-aqua/20 rounded-lg px-6 py-3">
+                      <span className="text-aqua font-semibold">{addon.name}</span>
+                      <span className="text-2xl font-bold">{addon.price}<span className="text-base font-normal text-muted-foreground">{addon.period}</span></span>
+                      <span className="text-sm text-muted-foreground">({addon.description})</span>
+                    </div>
+                  ))}
                 </div>
-                <p className="text-sm text-muted-foreground text-center">
-                  Setup fee covers training, evaluation checks, and onboarding.
-                </p>
+                <div className="text-center">
+                  <p className="text-sm text-muted-foreground">
+                    Setup fee covers training, evaluation checks, and onboarding.
+                  </p>
+                </div>
               </div>
             </ScrollReveal>
           </div>
