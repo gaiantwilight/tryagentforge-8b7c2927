@@ -332,21 +332,6 @@ export default function Wellness() {
           </div>
         </section>
 
-        {/* Dynamic Chat Showcase */}
-        <section className="py-16 bg-card/30">
-          <div className="container-premium">
-            <ScrollReveal className="text-center space-y-4 mb-12">
-              <h2 className="text-2xl lg:text-3xl font-bold">See it in action</h2>
-              <p className="text-lg text-muted-foreground">
-                Watch how our AI handles real wellness inquiries
-              </p>
-            </ScrollReveal>
-            
-            <ScrollReveal delay={200}>
-              <ChatShowcase messages={wellnessChatMessages} theme="aqua" />
-            </ScrollReveal>
-          </div>
-        </section>
 
         {/* Benefits Section */}
         <section id="benefits" className="py-20">
@@ -361,7 +346,7 @@ export default function Wellness() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               {benefits.map((benefit, index) => (
                 <ScrollReveal key={index} delay={index * 100}>
-                  <Card className="p-8 bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border-aqua/20 hover-lift h-full">
+                  <Card className="p-8 bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border-aqua/20 card-hover-glow h-full">
                     <div className="flex items-center space-x-4 mb-4">
                       <div className="w-12 h-12 bg-aqua/20 rounded-full flex items-center justify-center text-aqua">
                         {benefit.icon}

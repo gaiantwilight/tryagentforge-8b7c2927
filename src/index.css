@@ -203,6 +203,18 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-ember);
   }
 
+  /* Card hover effects with orange glow */
+  .card-hover-glow {
+    transition: var(--transition-premium);
+  }
+
+  .card-hover-glow:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-ember);
+    border-color: hsl(var(--ember) / 0.3);
+    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--ember) / 0.05));
+  }
+
   /* Responsive container */
   .container-premium {
     max-width: 1200px;

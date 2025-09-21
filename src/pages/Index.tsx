@@ -180,16 +180,24 @@ export default function Index() {
 
               <ScrollReveal delay={200} className="relative">
                 <div className="relative aspect-video bg-gradient-card rounded-3xl overflow-hidden shadow-premium">
-                  {/* Video placeholder with ember overlay */}
-                  <div className="absolute inset-0 bg-gradient-hero"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center space-y-4">
-                      <div className="w-16 h-16 bg-gradient-ember rounded-full flex items-center justify-center mx-auto">
-                        <MessageSquare className="w-8 h-8 text-white" />
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/hero-video.mp4" type="video/mp4" />
+                    {/* Fallback content */}
+                    <div className="absolute inset-0 bg-gradient-hero flex items-center justify-center">
+                      <div className="text-center space-y-4">
+                        <div className="w-16 h-16 bg-gradient-ember rounded-full flex items-center justify-center mx-auto">
+                          <MessageSquare className="w-8 h-8 text-white" />
+                        </div>
+                        <p className="text-muted-foreground">Hero Video</p>
                       </div>
-                      <p className="text-muted-foreground">Hero Video Coming Soon</p>
                     </div>
-                  </div>
+                  </video>
                 </div>
               </ScrollReveal>
             </div>
@@ -242,7 +250,7 @@ export default function Index() {
                 }
               ].map((item, index) => (
                 <ScrollReveal key={index} delay={index * 100}>
-                  <Card className="p-8 h-full hover-lift bg-gradient-card border-line">
+                  <Card className="p-8 h-full card-hover-glow bg-gradient-card border-line">
                     <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-6">
                       <item.icon className="w-6 h-6 text-white" />
                     </div>
@@ -277,7 +285,7 @@ export default function Index() {
                 { icon: Shield, title: "Compliance-aware", description: "PII-conscious responses that protect your business." }
               ].map((feature, index) => (
                 <ScrollReveal key={index} delay={index * 75}>
-                  <Card className="p-6 hover-lift bg-gradient-card border-line">
+                  <Card className="p-6 card-hover-glow bg-gradient-card border-line">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                       <feature.icon className="w-5 h-5 text-primary" />
                     </div>
@@ -310,7 +318,7 @@ export default function Index() {
                 { value: countUp.support, suffix: "", label: "support hrs covered" }
               ].map((metric, index) => (
                 <ScrollReveal key={index} delay={index * 100}>
-                  <Card className="p-6 text-center hover-lift bg-gradient-card border-line">
+                  <Card className="p-6 text-center card-hover-glow bg-gradient-card border-line">
                     <div className="text-4xl lg:text-5xl font-sora font-bold text-ember mb-2">
                       {metric.value}{metric.suffix}
                     </div>
