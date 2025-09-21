@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { EmberCanvas } from '@/components/ui/ember-canvas';
+import { VideoHero } from '@/components/ui/video-hero';
 import { StructuredData } from '@/components/ui/structured-data';
 import { MobileNav } from '@/components/ui/mobile-nav';
 import { Testimonials } from '@/components/ui/testimonials';

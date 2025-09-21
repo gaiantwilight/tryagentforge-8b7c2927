@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import { ProgressBar } from '@/components/ui/progress-bar';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { WaterCanvas } from '@/components/ui/water-canvas';
+import { VideoHero } from '@/components/ui/video-hero';
 import { StructuredData } from '@/components/ui/structured-data';
 import { Testimonials } from '@/components/ui/testimonials';
 import { SecuritySection } from '@/components/ui/security-section';
@@ -203,12 +204,61 @@ export default function Wellness() {
   return (
     <SoundManager>
       <div className="min-h-screen bg-background text-foreground">
+        {/* Skip to content link */}
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-ember focus:text-white focus:rounded-md focus:shadow-lg"
+        >
+          Skip to content
+        </a>
+        
         <AnnouncementBanner theme="aqua" onBookNow={() => scrollToSection('demo')} />
+        
+        {/* SEO Meta Tags */}
+        <head>
+          <title>Wellness AI Agents | HIPAA-Aware Booking & Patient Care | AgentForge</title>
+          <meta name="description" content="AI agents for wellness practices. HIPAA-aware intake, automated booking, and patient follow-ups for cryotherapy, red light, and wellness clinics." />
+          <link rel="canonical" href="https://agentforge.lovable.app/wellness" />
+          
+          {/* Open Graph */}
+          <meta property="og:title" content="Wellness AI Agents | HIPAA-Aware Booking & Patient Care" />
+          <meta property="og:description" content="AI agents for wellness practices. HIPAA-aware intake, automated booking, and patient follow-ups for cryotherapy, red light, and wellness clinics." />
+          <meta property="og:url" content="https://agentforge.lovable.app/wellness" />
+          <meta property="og:image" content="https://agentforge.lovable.app/wellness-hero-video.mp4" />
+          <meta property="og:type" content="website" />
+          
+          {/* Twitter Card */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Wellness AI Agents | HIPAA-Aware Booking & Patient Care" />
+          <meta name="twitter:description" content="AI agents for wellness practices. HIPAA-aware intake, automated booking, and patient follow-ups for cryotherapy, red light, and wellness clinics." />
+          <meta name="twitter:image" content="https://agentforge.lovable.app/wellness-hero-video.mp4" />
+          
+          {/* Preconnect to external domains */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+          
+          {/* Preload fonts */}
+          <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+          <link rel="preload" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" as="style" />
+          
+          {/* GA4/GTM Placeholder */}
+          {/* 
+          <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GA_MEASUREMENT_ID');
+          </script>
+          */}
+        </head>
+        
         <StructuredData isWellness />
         <ProgressBar />
       
         {/* Header */}
         <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-line">
+          <nav role="navigation" aria-label="Main navigation">
           <div className="container-premium">
             <div className="flex items-center justify-between h-16">
               {/* Logo */}
@@ -259,6 +309,7 @@ export default function Wellness() {
               <MobileNav onBookDemo={() => scrollToSection('demo')} />
             </div>
           </div>
+          </nav>
         </header>
 
         {/* Personal Passion Section */}
@@ -282,6 +333,7 @@ export default function Wellness() {
         </section>
 
         {/* Hero Section */}
+        <main id="main-content">
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           <WaterCanvas className="absolute inset-0 opacity-20" />
           <div className="relative z-10 container-premium py-20">
@@ -316,17 +368,11 @@ export default function Wellness() {
               </ScrollReveal>
 
               <ScrollReveal delay={200} className="relative">
-                <div className="relative aspect-video bg-gradient-to-br from-aqua/5 to-aqua-glow/10 rounded-2xl border border-aqua/20 overflow-hidden">
-                  {/* VIDEO_PLACEHOLDER: Wellness demo video will go here */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center space-y-2">
-                      <div className="w-16 h-16 bg-aqua/20 rounded-full flex items-center justify-center mx-auto">
-                        <Heart className="w-8 h-8 text-aqua" />
-                      </div>
-                      <p className="text-muted-foreground">Wellness Demo Video</p>
-                    </div>
-                  </div>
-                </div>
+                <VideoHero 
+                  videoSrc="/wellness-hero-video.mp4"
+                  title="Wellness AI Demo"
+                  className="bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border border-aqua/20"
+                />
               </ScrollReveal>
             </div>
           </div>
@@ -361,32 +407,80 @@ export default function Wellness() {
               ))}
             </div>
 
-            {/* Modalities Section */}
-            <ScrollReveal className="text-center space-y-6">
-              <h3 className="text-2xl lg:text-3xl font-bold">Wellness modalities we support</h3>
-              <div className="flex flex-wrap justify-center gap-3 mb-4">
-                {modalities.map((modality, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-aqua/20 border border-aqua/30 rounded-full text-aqua font-medium hover:bg-aqua/30 transition-colors"
-                  >
-                    {modality}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap justify-center gap-2">
-                {additionalServices.map((service, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-muted/50 border border-muted rounded-full text-muted-foreground text-sm"
-                  >
-                    {service}
-                  </span>
-                ))}
-              </div>
+        {/* Modalities Section */}
+        <ScrollReveal className="text-center space-y-6">
+          <h3 className="text-2xl lg:text-3xl font-bold">Wellness modalities we support</h3>
+          <div className="flex flex-wrap justify-center gap-3 mb-4">
+            {modalities.map((modality, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 bg-aqua/20 border border-aqua/30 rounded-full text-aqua font-medium hover:bg-aqua/30 transition-colors"
+              >
+                {modality}
+              </span>
+            ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-2">
+            {additionalServices.map((service, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 bg-muted/50 border border-muted rounded-full text-muted-foreground text-sm"
+              >
+                {service}
+              </span>
+            ))}
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+
+    {/* Live AI Conversations Section - Moved up after modalities */}
+    <section className="py-20 bg-card/30">
+      <div className="container-premium">
+        <ScrollReveal className="text-center space-y-4 mb-16">
+          <h2 className="text-2xl lg:text-3xl font-bold">Live AI Conversations</h2>
+          <p className="text-xl text-muted-foreground">
+            See our wellness AI agents in action with real conversation examples
+          </p>
+        </ScrollReveal>
+
+        <div className="grid lg:grid-cols-2 gap-12">
+          <ScrollReveal>
+            <div className="space-y-6">
+              <ScrollableChatDemo theme="aqua" />
+            </div>
+          </ScrollReveal>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <ScrollReveal>
+              <Card className="p-8 bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border-aqua/20">
+                <h3 className="text-2xl font-semibold mb-6 text-center">Get Your Demo</h3>
+                {/* GHL_FORM_EMBED */}
+                <div className="space-y-4 text-center">
+                  <p className="text-muted-foreground">Contact form will be embedded here</p>
+                  <Button variant="aqua-default" className="w-full">
+                    Contact Sales
+                  </Button>
+                </div>
+              </Card>
+            </ScrollReveal>
+
+            <ScrollReveal delay={200}>
+              <Card className="p-8 bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border-aqua/20">
+                <h3 className="text-2xl font-semibold mb-6 text-center">Book a Consult</h3>
+                {/* GHL_CALENDAR_EMBED */}
+                <div className="space-y-4 text-center">
+                  <p className="text-muted-foreground">Calendar booking will be embedded here</p>
+                  <Button variant="aqua-outline" className="w-full">
+                    Schedule Demo
+                  </Button>
+                </div>
+              </Card>
             </ScrollReveal>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
         {/* Security & Evaluations Section */}
         <SecuritySection theme="aqua" />
@@ -513,47 +607,43 @@ export default function Wellness() {
         <Testimonials theme="aqua" />
 
         {/* Demo Section */}
-        <section id="demo" className="py-20 bg-card/30">
+        <section id="demo" className="py-20">
           <div className="container-premium">
             <ScrollReveal className="text-center space-y-4 mb-16">
-              <h2 className="text-2xl lg:text-3xl font-bold">Live AI Conversations</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold">Ready to get started?</h2>
               <p className="text-xl text-muted-foreground">
-                See our wellness AI agents in action with real conversation examples
+                Join wellness practices already using AI to grow their business
               </p>
             </ScrollReveal>
 
-            <div className="grid lg:grid-cols-2 gap-12">
-              <ScrollReveal>
-                <div className="space-y-6">
-                  <ScrollableChatDemo theme="aqua" />
-                </div>
-              </ScrollReveal>
-              
-              <ScrollReveal>
-                <Card className="p-8 bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border-aqua/20">
-                  <h3 className="text-2xl font-semibold mb-6 text-center">Get Your Demo</h3>
-                  {/* GHL_FORM_EMBED */}
-                  <div className="space-y-4 text-center">
-                    <p className="text-muted-foreground">Contact form will be embedded here</p>
-                    <Button variant="aqua-default">
-                      Contact Sales
-                    </Button>
-                  </div>
-                </Card>
-              </ScrollReveal>
+            <div className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-6">
+                <ScrollReveal>
+                  <Card className="p-8 bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border-aqua/20 card-hover-glow">
+                    <h3 className="text-2xl font-semibold mb-6 text-center">Get Your Demo</h3>
+                    {/* GHL_FORM_EMBED */}
+                    <div className="space-y-4 text-center">
+                      <p className="text-muted-foreground">Contact form will be embedded here</p>
+                      <Button variant="aqua-default" className="w-full">
+                        Contact Sales
+                      </Button>
+                    </div>
+                  </Card>
+                </ScrollReveal>
 
-              <ScrollReveal delay={200}>
-                <Card className="p-8 bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border-aqua/20">
-                  <h3 className="text-2xl font-semibold mb-6 text-center">Book a consult</h3>
-                  {/* GHL_CALENDAR_EMBED */}
-                  <div className="space-y-4 text-center">
-                    <p className="text-muted-foreground">Calendar booking will be embedded here</p>
-                    <Button variant="aqua-outline">
-                      Schedule Demo
-                    </Button>
-                  </div>
-                </Card>
-              </ScrollReveal>
+                <ScrollReveal delay={200}>
+                  <Card className="p-8 bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border-aqua/20 card-hover-glow">
+                    <h3 className="text-2xl font-semibold mb-6 text-center">Book a Consult</h3>
+                    {/* GHL_CALENDAR_EMBED */}
+                    <div className="space-y-4 text-center">
+                      <p className="text-muted-foreground">Calendar booking will be embedded here</p>
+                      <Button variant="aqua-outline" className="w-full">
+                        Schedule Demo
+                      </Button>
+                    </div>
+                  </Card>
+                </ScrollReveal>
+              </div>
             </div>
           </div>
         </section>
@@ -593,6 +683,8 @@ export default function Wellness() {
           </div>
         </section>
 
+        </main>
+        
         {/* Footer */}
         <footer className="py-16 bg-card">
           <div className="container-premium">

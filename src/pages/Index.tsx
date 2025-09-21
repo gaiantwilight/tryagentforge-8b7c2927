@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card';
 import { ProgressBar } from '@/components/ui/progress-bar';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { ScrollableChatDemo } from '@/components/ui/scrollable-chat-demo';
+import { VideoHero } from '@/components/ui/video-hero';
 import { StructuredData } from '@/components/ui/structured-data';
 import { MobileNav } from '@/components/ui/mobile-nav';
 import { SoundManager } from '@/components/ui/sound-manager';
@@ -81,11 +82,48 @@ export default function Index() {
   return (
     <SoundManager>
       <div className="min-h-screen bg-background text-foreground">
+        {/* Skip to content link */}
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-ember focus:text-white focus:rounded-md focus:shadow-lg"
+        >
+          Skip to content
+        </a>
+        
+        {/* SEO Meta Tags */}
+        <head>
+          <title>AI Agents for Bookings & Support | AgentForge | 24/7 Automated Customer Service</title>
+          <meta name="description" content="24/7 AI agents for business bookings, customer support, and lead generation. Automate SMS follow-ups, website chat, and convert visitors into customers." />
+          <link rel="canonical" href="https://agentforge.lovable.app/" />
+          
+          {/* Open Graph */}
+          <meta property="og:title" content="AI Agents for Bookings & Support | AgentForge" />
+          <meta property="og:description" content="24/7 AI agents for business bookings, customer support, and lead generation. Automate SMS follow-ups, website chat, and convert visitors into customers." />
+          <meta property="og:url" content="https://agentforge.lovable.app/" />
+          <meta property="og:image" content="https://agentforge.lovable.app/hero-video.mp4" />
+          <meta property="og:type" content="website" />
+          
+          {/* Twitter Card */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="AI Agents for Bookings & Support | AgentForge" />
+          <meta name="twitter:description" content="24/7 AI agents for business bookings, customer support, and lead generation. Automate SMS follow-ups, website chat, and convert visitors into customers." />
+          <meta name="twitter:image" content="https://agentforge.lovable.app/hero-video.mp4" />
+          
+          {/* Preconnect to external domains */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+          
+          {/* Preload fonts */}
+          <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+          <link rel="preload" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" as="style" />
+        </head>
+        
         <StructuredData />
         <ProgressBar />
       
         {/* Header */}
         <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-line">
+          <nav role="navigation" aria-label="Main navigation">
           <div className="container-premium">
             <div className="flex items-center justify-between h-16">
               {/* Logo */}
@@ -134,9 +172,11 @@ export default function Index() {
               <MobileNav onBookDemo={() => scrollToSection('demo-form')} />
             </div>
           </div>
+          </nav>
         </header>
 
         {/* Hero */}
+        <main id="main-content">
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-hero opacity-30"></div>
           
@@ -179,24 +219,11 @@ export default function Index() {
               </ScrollReveal>
 
               <ScrollReveal delay={200} className="relative">
-                <div className="relative aspect-video bg-gradient-card rounded-3xl overflow-hidden shadow-premium">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover"
-                  >
-                    <source src="/hero-video.mp4" type="video/mp4" />
-                    {/* Fallback content */}
-                    <div className="absolute inset-0 bg-gradient-hero flex items-center justify-center">
-                      <div className="text-center space-y-4">
-                        <div className="w-16 h-16 bg-gradient-ember rounded-full flex items-center justify-center mx-auto">
-                          <MessageSquare className="w-8 h-8 text-white" />
-                        </div>
-                        <p className="text-muted-foreground">Hero Video</p>
-                      </div>
-                    </div>
+                <VideoHero 
+                  videoSrc="/hero-video.mp4"
+                  title="AgentForge Hero Demo"
+                  className="bg-gradient-card shadow-premium"
+                />
                   </video>
                 </div>
               </ScrollReveal>
@@ -549,6 +576,8 @@ export default function Index() {
           </div>
         </section>
 
+        </main>
+        
         {/* Footer */}
         <footer className="py-16 bg-card border-t border-line">
           <div className="container-premium">
