@@ -250,4 +250,17 @@ All colors MUST be HSL.
       opacity: 0;
     }
   }
+
+  /* Blockchain-specific tab styling */
+  .blockchain-tabs [data-state="active"] {
+    @apply bg-gradient-ember text-white shadow-ember;
+  }
+
+  .blockchain-tabs .lucide {
+    @apply transition-colors;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-premium;
+  }
 }

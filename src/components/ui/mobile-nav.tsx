@@ -126,6 +126,14 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
               Wellness
             </Link>
 
+            <Link
+              to="/blockchain"
+              className="block py-4 px-4 text-lg font-medium hover:bg-muted rounded-lg transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Blockchain
+            </Link>
+
             {location.pathname === '/' && (
               <>
                 <button
