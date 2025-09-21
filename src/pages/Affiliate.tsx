@@ -74,8 +74,8 @@ const Affiliate = () => {
             {[
               {
                 icon: DollarSign,
-                title: "30% Commission",
-                description: "Earn 30% on all paid plans for the first 12 months of each referral."
+                title: "High Commission",
+                description: "Earn generous commissions on all paid plans for the first 12 months of each referral."
               },
               {
                 icon: TrendingUp,
@@ -164,7 +164,7 @@ const Affiliate = () => {
           </div>
           <div className="text-center mt-4">
             <p className="text-muted-foreground text-sm">
-              Serving clients in Garden Grove & Orange County.
+              Serving clients in Huntington Beach, Orange County, Los Angeles & Long Beach.
             </p>
           </div>
         </div>

@@ -336,10 +336,10 @@ export default function Index() {
             <div className="grid lg:grid-cols-4 gap-8">
               {[
                 {
-                  name: "Starter",
+                  name: "Wellness Starter",
                   price: "$999",
-                  period: "/mo",
-                  setup: "$499 setup",
+                  period: "/month",
+                  setup: "+ $499 setup",
                   features: [
                     "1 AI Agent (Web chat + SMS)",
                     "Lead capture + Calendar booking",
@@ -347,29 +347,29 @@ export default function Index() {
                     "1,000 conversations/mo included",
                     "Monthly reporting"
                   ],
-                  cta: "Start with Starter",
+                  cta: "Get Started",
                   popular: false
                 },
                 {
-                  name: "Growth",
+                  name: "Wellness Growth",
                   price: "$1,749", 
-                  period: "/mo",
-                  setup: "$749 setup",
+                  period: "/month",
+                  setup: "+ $749 setup",
                   features: [
-                    "2 AI Agents (e.g. Web + SMS or Web + Voice)",
+                    "2 AI Agents (e.g., Web + SMS or Web + Voice)",
                     "All Starter features",
                     "Advanced booking recovery + multi-channel",
                     "3,000 conversations/mo included",
                     "Monthly reporting"
                   ],
-                  cta: "Choose Growth",
+                  cta: "Get Started",
                   popular: true
                 },
                 {
-                  name: "Pro",
+                  name: "Wellness Pro",
                   price: "$2,449",
-                  period: "/mo",
-                  setup: "$999 setup", 
+                  period: "/month",
+                  setup: "+ $999 setup", 
                   features: [
                     "2 AI Agents (Web + Voice or custom mix)",
                     "All Growth features",
@@ -377,29 +377,32 @@ export default function Index() {
                     "Custom integrations & analytics",
                     "Weekly reporting"
                   ],
-                  cta: "Go Pro",
+                  cta: "Get Started",
                   popular: false
                 },
                 {
                   name: "Custom",
                   price: "Contact us",
-                  period: "",
+                  period: "/month",
                   setup: "",
                   features: [
-                    "Unlimited bots",
-                    "Everything in Pro",
-                    "Fully tailored"
+                    "Unlimited bots"
                   ],
                   cta: "Contact Sales",
                   popular: false
                 }
               ].map((tier, index) => (
                 <ScrollReveal key={index} delay={index * 100}>
-                  <Card className={`p-8 h-full relative ${
-                    tier.popular 
-                      ? 'border-ember bg-gradient-to-br from-ember/5 to-ember/10 shadow-xl' 
-                      : 'border-line'
-                  }`}>
+                  <Card 
+                    className={`p-8 h-full relative cursor-pointer transition-all ${
+                      selectedPlan === index 
+                        ? 'border-ember bg-gradient-to-br from-ember/5 to-ember/10 shadow-xl' 
+                        : tier.popular 
+                          ? 'border-ember bg-gradient-to-br from-ember/5 to-ember/10 shadow-xl' 
+                          : 'border-line hover:border-ember/50'
+                    }`}
+                    onClick={() => setSelectedPlan(index)}
+                  >
                     {tier.popular && (
                       <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                         <span className="bg-gradient-ember text-white px-4 py-1 rounded-full text-sm font-medium">
@@ -548,15 +551,15 @@ export default function Index() {
                 <div className="space-y-2 text-sm">
                   <button onClick={() => scrollToSection('how-it-works')} className="block text-muted-foreground hover:text-primary transition-colors">How it Works</button>
                   <button onClick={() => scrollToSection('features')} className="block text-muted-foreground hover:text-primary transition-colors">Features</button>
-                  <button onClick={() => scrollToSection('pricing')} className="block text-muted-foreground hover:text-primary transition-colors">Pricing</button>
                   <Link to="/wellness" className="block text-muted-foreground hover:text-primary transition-colors">Wellness</Link>
+                  <Link to="/blockchain" className="block text-muted-foreground hover:text-primary transition-colors">Blockchain</Link>
                 </div>
               </div>
               
                 <div className="space-y-4">
                 <h4 className="font-semibold">Company</h4>
                 <div className="space-y-2 text-sm">
-                  <Link to="/blockchain" className="block text-muted-foreground hover:text-primary transition-colors">Blockchain</Link>
+                  <Link to="/" className="block text-muted-foreground hover:text-primary transition-colors">Home</Link>
                   <Link to="/privacy" className="block text-muted-foreground hover:text-primary transition-colors">Privacy</Link>
                   <Link to="/terms" className="block text-muted-foreground hover:text-primary transition-colors">Terms</Link>
                 </div>

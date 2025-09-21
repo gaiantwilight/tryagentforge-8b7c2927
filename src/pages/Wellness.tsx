@@ -589,7 +589,7 @@ export default function Wellness() {
               <div className="space-y-4">
                 <h3 className="font-sora font-bold text-xl">AgentForge</h3>
                 <p className="text-muted-foreground text-sm">
-                  AI agents for wellness practices. Serving wellness clinics in Garden Grove & Orange County.
+                  AI agents for wellness practices. Serving wellness clinics in Huntington Beach, Orange County, Los Angeles & Long Beach.
                 </p>
               </div>
               

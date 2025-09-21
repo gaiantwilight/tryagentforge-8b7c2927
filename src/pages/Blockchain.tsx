@@ -573,7 +573,7 @@ export default function Blockchain() {
                       <span className="text-3xl font-bold">$1,749</span>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      $749 setup
+                      + $749 setup
                     </p>
                     <p className="text-muted-foreground">/month</p>
                   </div>
@@ -626,7 +626,7 @@ export default function Blockchain() {
                       <span className="text-3xl font-bold">$2,449</span>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      $999 setup
+                      + $999 setup
                     </p>
                     <p className="text-muted-foreground">/month</p>
                   </div>
