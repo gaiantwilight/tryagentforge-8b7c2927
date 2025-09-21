@@ -58,6 +58,7 @@ All colors MUST be HSL.
     --shadow-premium: 0 20px 40px -12px hsl(220 33% 2% / 0.5);
     --shadow-card: 0 8px 32px -8px hsl(220 33% 2% / 0.3);
     --shadow-ember: 0 8px 32px -8px hsl(var(--ember) / 0.2);
+    --shadow-aqua: 0 8px 32px -8px hsl(var(--aqua) / 0.2);
     
     /* Animation */
     --transition-premium: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

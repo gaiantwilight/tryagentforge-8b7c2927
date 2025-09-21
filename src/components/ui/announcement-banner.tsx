@@ -74,7 +74,7 @@ export function AnnouncementBanner({ theme = "ember", onBookNow }: AnnouncementB
               ${isCompact ? 'text-xs' : ''}
               truncate
             `}>
-              Founding client pricing — 30% off monthly. Book a 15-min demo.
+              Founding client pricing - 30% off monthly. Book a 15-min demo.
             </p>
           </div>
           

@@ -204,9 +204,9 @@ export default function Index() {
         <section id="live-demo" className="py-16 bg-gradient-to-br from-card/30 to-card/10">
           <div className="container-premium">
             <ScrollReveal className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold">See AgentForge in action</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Live Chat Demo</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Watch how our AI handles real customer conversations with personality and precision
+                See how our AI handles real conversations
               </p>
             </ScrollReveal>
             <ScrollReveal delay={200}>
@@ -450,14 +450,10 @@ export default function Index() {
               <div className="bg-gradient-card rounded-2xl p-8 border border-line mt-12">
                 <div className="text-center space-y-4">
                   <h4 className="text-xl font-sora font-bold">Add-ons</h4>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="flex items-center justify-between bg-ember/10 border border-ember/20 rounded-lg px-4 py-3">
+                  <div className="flex items-center justify-center">
+                    <div className="flex items-center justify-between bg-ember/10 border border-ember/20 rounded-lg px-4 py-3 max-w-sm w-full">
                       <span className="text-ember font-medium">Voice AI Agent</span>
                       <span className="font-bold">$599/mo</span>
-                    </div>
-                    <div className="flex items-center justify-between bg-primary/10 border border-primary/20 rounded-lg px-4 py-3">
-                      <span className="text-primary font-medium">White-label</span>
-                      <span className="font-bold">$299/mo</span>
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground">

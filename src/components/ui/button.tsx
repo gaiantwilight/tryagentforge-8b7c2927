@@ -17,6 +17,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         premium: "bg-gradient-ember text-white font-semibold shadow-ember hover:shadow-premium hover:-translate-y-1 border-0",
         call: "bg-transparent border border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold",
+        "aqua-default": "bg-aqua text-background hover:bg-aqua-glow shadow-aqua hover:shadow-premium hover:-translate-y-0.5",
+        "aqua-outline": "border border-aqua bg-transparent text-aqua hover:bg-aqua hover:text-background",
       },
       size: {
         default: "h-12 px-6 py-3",

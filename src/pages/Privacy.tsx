@@ -1,8 +1,24 @@
+import { Link } from 'react-router-dom';
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { Zap } from 'lucide-react';
 
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-line">
+        <div className="container-premium">
+          <div className="flex items-center justify-between h-16">
+            <Link to="/" className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gradient-ember rounded-lg flex items-center justify-center">
+                <Zap className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-xl font-sora font-bold">AgentForge</span>
+            </Link>
+          </div>
+        </div>
+      </header>
+      
       <div className="container-premium py-20">
         <ScrollReveal className="max-w-4xl mx-auto">
           <h1 className="text-4xl lg:text-6xl font-sora font-bold mb-8">Privacy Policy</h1>

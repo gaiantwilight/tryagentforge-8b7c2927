@@ -251,7 +251,7 @@ export default function Wellness() {
                 </div>
                 <h2 className="text-2xl lg:text-3xl font-bold">From passion to practice</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                  My deep passion for health and wellness—red light therapy, infrared saunas, cryotherapy, and all the modalities that help people feel their best—led me to pivot my business. I dream of one day opening my own wellness center, and that vision drives everything we build at AgentForge.
+                  Our business works closely with wellness centers and takes the time to understand each client's needs. I started using cold exposure several years ago and I'm passionate about wellness, red light therapy, general health, and more. I dream of opening up a wellness center in nature one day.
                 </p>
                 <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                   While we specialize in <strong className="text-aqua">cryotherapy, red light, infrared sauna, cold plunge, and hyperbaric</strong> treatments, we proudly serve gyms, dental practices, yoga studios, IV therapy clinics, med-spas, massage centers, and the entire wellness ecosystem.
@@ -268,8 +268,8 @@ export default function Wellness() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <ScrollReveal className="space-y-8">
                 <div className="space-y-6">
-                  <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                    AI agents that book more appointments—without extra staff
+                  <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+                    AI agents that book more appointments without extra staff
                   </h1>
                   <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
                     HIPAA-aware intake, text reminders, website chat, and no-show reduction. Tuned for cryotherapy, red light, infrared sauna, cold plunge, and hyperbaric.
@@ -280,7 +280,7 @@ export default function Wellness() {
                   <Button 
                     onClick={handleGetDemo}
                     size="lg" 
-                    className="bg-aqua hover:bg-aqua-glow text-background"
+                    variant="aqua-default"
                   >
                     Get a Demo
                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -288,8 +288,7 @@ export default function Wellness() {
                   <Button 
                     onClick={() => scrollToSection('benefits')}
                     size="lg" 
-                    variant="outline" 
-                    className="border-aqua text-aqua hover:bg-aqua hover:text-background"
+                    variant="aqua-outline"
                   >
                     See Benefits
                   </Button>
@@ -333,7 +332,7 @@ export default function Wellness() {
         <section id="benefits" className="py-20">
           <div className="container-premium">
             <ScrollReveal className="text-center space-y-4 mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold">Transform your wellness practice</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Transform your wellness practice</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Reduce administrative burden while improving patient outcomes with AI that understands healthcare.
               </p>
@@ -489,7 +488,7 @@ export default function Wellness() {
                   <h4 className="font-semibold">Add-ons</h4>
                   <div className="inline-flex items-center space-x-2 bg-aqua/10 border border-aqua/20 rounded-lg px-4 py-2">
                     <span className="text-aqua font-medium">Voice AI Agent</span>
-                    <span className="text-muted-foreground">—</span>
+                    <span className="text-muted-foreground">-</span>
                     <span className="font-bold">$599/mo</span>
                     <span className="text-sm text-muted-foreground">(unlimited)</span>
                   </div>
@@ -509,7 +508,7 @@ export default function Wellness() {
         <section id="demo" className="py-20 bg-card/30">
           <div className="container-premium">
             <ScrollReveal className="text-center space-y-4 mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold">Try it live</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Try it live</h2>
               <p className="text-xl text-muted-foreground">
                 Experience our wellness AI agents in action
               </p>
@@ -522,7 +521,7 @@ export default function Wellness() {
                   {/* GHL_FORM_EMBED */}
                   <div className="space-y-4 text-center">
                     <p className="text-muted-foreground">Contact form will be embedded here</p>
-                    <Button className="bg-aqua hover:bg-aqua-glow text-background">
+                    <Button variant="aqua-default">
                       Contact Sales
                     </Button>
                   </div>
@@ -535,7 +534,7 @@ export default function Wellness() {
                   {/* GHL_CALENDAR_EMBED */}
                   <div className="space-y-4 text-center">
                     <p className="text-muted-foreground">Calendar booking will be embedded here</p>
-                    <Button variant="outline" className="border-aqua text-aqua hover:bg-aqua hover:text-background">
+                    <Button variant="aqua-outline">
                       Schedule Demo
                     </Button>
                   </div>
@@ -549,7 +548,7 @@ export default function Wellness() {
         <section className="py-20">
           <div className="container-premium">
             <ScrollReveal className="text-center space-y-4 mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold">Frequently asked questions</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold">Frequently asked questions</h2>
             </ScrollReveal>
 
             <div className="max-w-3xl mx-auto space-y-6">
@@ -571,7 +570,7 @@ export default function Wellness() {
             <ScrollReveal>
               <div className="text-center">
                 <p className="text-sm text-muted-foreground">
-                  <strong>Healthcare Notice:</strong> Information only — not medical advice. We build HIPAA-aware conversational agents that respect your clinic's policies. 
+                  <strong>Healthcare Notice:</strong> Information only - not medical advice. We build HIPAA-aware conversational agents that respect your clinic's policies. 
                   All patient interactions are logged for quality assurance. 
                   For medical emergencies, patients are directed to appropriate emergency services.
                 </p>
