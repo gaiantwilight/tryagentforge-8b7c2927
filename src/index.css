@@ -263,4 +263,13 @@ All colors MUST be HSL.
   .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-premium;
   }
+
+  @keyframes matrix-scroll {
+    0% {
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(100px);
+    }
+  }
 }

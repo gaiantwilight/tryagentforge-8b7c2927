@@ -174,157 +174,179 @@ export default function Blockchain() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-slate-50 dark:bg-slate-900">
-        <div className="container-premium">
+      <section id="services" className="py-20 bg-slate-900">
+        {/* Matrix Effect Background */}
+        <div className="absolute inset-0 overflow-hidden opacity-10">
+          <div className="matrix-effect" style={{
+            background: `
+              repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 98px,
+                #00ff41 100px
+              ),
+              repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 98px,
+                #00ff41 100px
+              )
+            `,
+            backgroundSize: '100px 100px',
+            animation: 'matrix-scroll 20s linear infinite'
+          }} />
+        </div>
+        
+        <div className="container-premium relative z-10">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="text-2xl lg:text-3xl font-bold">Blockchain & Web3 Services</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-2xl lg:text-3xl font-bold text-white">Blockchain & Web3 Services</h2>
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
               Comprehensive AI solutions for the modern crypto ecosystem
             </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ScrollReveal delay={100}>
-              <Card className="p-6 border-line hover-lift bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Community Bots</h3>
-                <p className="text-muted-foreground mb-4">
+                <h3 className="text-xl font-bold mb-3 text-white">Community Bots</h3>
+                <p className="text-slate-300 mb-4">
                   Handle customer inquiries 24/7, keep your community informed with intelligent responses, and moderate Discord & Telegram channels. Trained on your specific data and documentation.
                 </p>
                 <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      24/7 customer inquiry handling
+                      <CheckCircle className="w-4 h-4 text-ember" />
+                      <span className="text-slate-300">24/7 customer inquiry handling</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Trained on your specific data
+                      <CheckCircle className="w-4 h-4 text-ember" />
+                      <span className="text-slate-300">Trained on your specific data</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Community education & support
+                      <CheckCircle className="w-4 h-4 text-ember" />
+                      <span className="text-slate-300">Community education & support</span>
                     </li>
                 </ul>
               </Card>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <Card className="p-6 border-line hover-lift bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <Code className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Developer Support</h3>
-                <p className="text-muted-foreground mb-4">
+                <h3 className="text-xl font-bold mb-3 text-white">Developer Support</h3>
+                <p className="text-slate-300 mb-4">
                   Docs copilot and developer Q&A for SDK, API support, and technical documentation.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Intelligent docs search
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">Intelligent docs search</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Code example generation
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">Code example generation</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    API troubleshooting
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">API troubleshooting</span>
                   </li>
                 </ul>
               </Card>
             </ScrollReveal>
 
             <ScrollReveal delay={300}>
-              <Card className="p-6 border-line hover-lift bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Market & Token Alerts</h3>
-                <p className="text-muted-foreground mb-4">
+                <h3 className="text-xl font-bold mb-3 text-white">Market & Token Alerts</h3>
+                <p className="text-slate-300 mb-4">
                   Real-time market notifications, token launch alerts, and smart contract updates.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Price movement alerts
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">Price movement alerts</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Contract event monitoring
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">Contract event monitoring</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Launch announcements
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">Launch announcements</span>
                   </li>
                 </ul>
               </Card>
             </ScrollReveal>
 
             <ScrollReveal delay={400}>
-              <Card className="p-6 border-line hover-lift bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Security & Compliance</h3>
-                <p className="text-muted-foreground mb-4">
+                <h3 className="text-xl font-bold mb-3 text-white">Security & Compliance</h3>
+                <p className="text-slate-300 mb-4">
                   Smart contract reviews, security policy setup, and compliance guardrails.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Security audits & reviews
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">Security audits & reviews</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Compliance monitoring
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">Compliance monitoring</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Risk assessment
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">Risk assessment</span>
                   </li>
                 </ul>
               </Card>
             </ScrollReveal>
 
             <ScrollReveal delay={500}>
-              <Card className="p-6 border-line hover-lift bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <Database className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">DAO & Treasury Support</h3>
-                <p className="text-muted-foreground mb-4">
+                <h3 className="text-xl font-bold mb-3 text-white">DAO & Treasury Support</h3>
+                <p className="text-slate-300 mb-4">
                   FAQs, policies, grant voting assistance, and secure escalation workflows.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Governance assistance
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">Governance assistance</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Proposal management
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">Proposal management</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Treasury reporting
+                    <CheckCircle className="w-4 h-4 text-ember" />
+                    <span className="text-slate-300">Treasury reporting</span>
                   </li>
                 </ul>
               </Card>
             </ScrollReveal>
 
             <ScrollReveal delay={600}>
-              <Card className="p-6 border-line hover-lift bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <HeadphonesIcon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">Voice Agent Add-On</h3>
-                <p className="text-muted-foreground mb-4">
+                <h3 className="text-xl font-bold mb-3 text-white">Voice Agent Add-On</h3>
+                <p className="text-slate-300 mb-4">
                   Optional voice AI capabilities for Discord calls, community AMAs, and phone support.
                 </p>
                 <div className="mt-4">
-                  <Badge variant="secondary" className="text-xs">
+                  <Badge variant="secondary" className="text-xs bg-ember/20 text-ember border-ember/30">
                     +$599/month
                   </Badge>
                 </div>
@@ -412,51 +434,51 @@ export default function Blockchain() {
       </section>
 
       {/* Security & Trust Section */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-900">
+      <section className="py-20 bg-slate-900">
         <div className="container-premium">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="text-2xl lg:text-3xl font-bold">Security & Trust</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-2xl lg:text-3xl font-bold text-white">Security & Trust</h2>
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
               Built for the highest security standards in crypto
             </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ScrollReveal delay={100}>
-              <Card className="p-6 text-center border-line">
-                <AlertTriangle className="w-8 h-8 text-primary mx-auto mb-4" />
-                <h3 className="font-bold mb-2">Pre-Launch Evaluation</h3>
-                <p className="text-sm text-muted-foreground">
+              <Card className="p-6 text-center border-slate-600 bg-slate-800/80 backdrop-blur-sm">
+                <AlertTriangle className="w-8 h-8 text-ember mx-auto mb-4" />
+                <h3 className="font-bold mb-2 text-white">Pre-Launch Evaluation</h3>
+                <p className="text-sm text-slate-300">
                   Red-team style security checks and audit readiness assessment
                 </p>
               </Card>
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <Card className="p-6 text-center border-line">
-                <Lock className="w-8 h-8 text-primary mx-auto mb-4" />
-                <h3 className="font-bold mb-2">Compliance Aware</h3>
-                <p className="text-sm text-muted-foreground">
+              <Card className="p-6 text-center border-slate-600 bg-slate-800/80 backdrop-blur-sm">
+                <Lock className="w-8 h-8 text-ember mx-auto mb-4" />
+                <h3 className="font-bold mb-2 text-white">Compliance Aware</h3>
+                <p className="text-sm text-slate-300">
                   Regional regulation compliance with no unsubstantiated advice
                 </p>
               </Card>
             </ScrollReveal>
 
             <ScrollReveal delay={300}>
-              <Card className="p-6 text-center border-line">
-                <Shield className="w-8 h-8 text-primary mx-auto mb-4" />
-                <h3 className="font-bold mb-2">Moderation Filters</h3>
-                <p className="text-sm text-muted-foreground">
+              <Card className="p-6 text-center border-slate-600 bg-slate-800/80 backdrop-blur-sm">
+                <Shield className="w-8 h-8 text-ember mx-auto mb-4" />
+                <h3 className="font-bold mb-2 text-white">Moderation Filters</h3>
+                <p className="text-sm text-slate-300">
                   Advanced spam, scam, and fraud detection with real-time blocking
                 </p>
               </Card>
             </ScrollReveal>
 
             <ScrollReveal delay={400}>
-              <Card className="p-6 text-center border-line">
-                <FileText className="w-8 h-8 text-primary mx-auto mb-4" />
-                <h3 className="font-bold mb-2">Logging & Oversight</h3>
-                <p className="text-sm text-muted-foreground">
+              <Card className="p-6 text-center border-slate-600 bg-slate-800/80 backdrop-blur-sm">
+                <FileText className="w-8 h-8 text-ember mx-auto mb-4" />
+                <h3 className="font-bold mb-2 text-white">Logging & Oversight</h3>
+                <p className="text-sm text-slate-300">
                   Comprehensive audit trails and administrative oversight tools
                 </p>
               </Card>
@@ -469,17 +491,17 @@ export default function Blockchain() {
       <Testimonials theme="ember" />
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-slate-50 dark:bg-slate-900">
+      <section id="pricing" className="py-20 bg-slate-900">
         <div className="container-premium">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="text-2xl lg:text-3xl font-bold">Blockchain-Focused Pricing</h2>
-            <p className="text-lg text-muted-foreground">
+            <h2 className="text-2xl lg:text-3xl font-bold text-white">Blockchain-Focused Pricing</h2>
+            <p className="text-lg text-slate-300">
               Choose the perfect plan for your Web3 project
             </p>
           </ScrollReveal>
 
           <div className="grid lg:grid-cols-4 gap-8">
-            {/* Starter Plan */}
+            {/* Wellness Starter Plan */}
             <ScrollReveal delay={100}>
               <Card className={`p-6 border-2 transition-all hover-lift ${
                 selectedPlan === 'starter' 
@@ -488,17 +510,16 @@ export default function Blockchain() {
               }`}>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold">Starter</h3>
-                    <p className="text-sm text-muted-foreground">Perfect for new projects</p>
+                    <h3 className="text-xl font-bold">Wellness Starter</h3>
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-baseline space-x-1">
                       <span className="text-3xl font-bold">$999</span>
-                      <span className="text-muted-foreground">/month</span>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      + $499 setup
+                      $499 setup
                     </p>
+                    <p className="text-muted-foreground">/month</p>
                   </div>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
@@ -507,11 +528,15 @@ export default function Blockchain() {
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      1,000 conversations/mo
+                      Lead capture + Calendar booking
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Community bot integration
+                      Booking recovery (missed booking follow-ups)
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                      1,000 conversations/mo included
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
@@ -523,13 +548,13 @@ export default function Blockchain() {
                     variant={selectedPlan === 'starter' ? 'premium' : 'outline'}
                     onClick={() => setSelectedPlan('starter')}
                   >
-                    {selectedPlan === 'starter' ? 'Selected' : 'Select Plan'}
+                    Get Started
                   </Button>
                 </div>
               </Card>
             </ScrollReveal>
 
-            {/* Growth Plan */}
+            {/* Wellness Growth Plan */}
             <ScrollReveal delay={200}>
               <Card className={`p-6 border-2 transition-all hover-lift relative ${
                 selectedPlan === 'growth' 
@@ -541,40 +566,37 @@ export default function Blockchain() {
                 </Badge>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold">Growth</h3>
-                    <p className="text-sm text-muted-foreground">For scaling communities</p>
+                    <h3 className="text-xl font-bold">Wellness Growth</h3>
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-baseline space-x-1">
-                      <span className="text-3xl font-bold">
-                        ${isAnnual ? '800' : '1000'}
-                      </span>
-                      <span className="text-muted-foreground">/month</span>
+                      <span className="text-3xl font-bold">$1,749</span>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      + $1,000 setup fee
+                      $749 setup
                     </p>
+                    <p className="text-muted-foreground">/month</p>
                   </div>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Advanced moderation & spam detection
+                      2 AI Agents (e.g., Web + SMS or Web + Voice)
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Developer docs copilot
+                      All Starter features
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Smart contract monitoring
+                      Advanced booking recovery + multi-channel
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Multi-platform integration
+                      3,000 conversations/mo included
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Security audit assistance
+                      Monthly reporting
                     </li>
                   </ul>
                   <Button 
@@ -582,13 +604,13 @@ export default function Blockchain() {
                     variant={selectedPlan === 'growth' ? 'premium' : 'outline'}
                     onClick={() => setSelectedPlan('growth')}
                   >
-                    {selectedPlan === 'growth' ? 'Selected' : 'Select Plan'}
+                    Get Started
                   </Button>
                 </div>
               </Card>
             </ScrollReveal>
 
-            {/* Pro Plan */}
+            {/* Wellness Pro Plan */}
             <ScrollReveal delay={300}>
               <Card className={`p-6 border-2 transition-all hover-lift ${
                 selectedPlan === 'pro' 
@@ -597,40 +619,41 @@ export default function Blockchain() {
               }`}>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold">Pro</h3>
-                    <p className="text-sm text-muted-foreground">For established protocols</p>
+                    <h3 className="text-xl font-bold">Wellness Pro</h3>
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-baseline space-x-1">
-                      <span className="text-3xl font-bold">
-                        ${isAnnual ? '1600' : '2000'}
-                      </span>
-                      <span className="text-muted-foreground">/month</span>
+                      <span className="text-3xl font-bold">$2,449</span>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      + $2,000 setup fee
+                      $999 setup
                     </p>
+                    <p className="text-muted-foreground">/month</p>
                   </div>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      DAO governance support
+                      2 AI Agents (Web + Voice or custom mix)
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Treasury management tools
+                      All Growth features
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Advanced compliance monitoring
+                      5,000 conversations/mo included
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Custom integrations
+                      Custom integrations & analytics
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Priority support
+                      Weekly reporting
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                      Telegram/Discord bot included
                     </li>
                   </ul>
                   <Button 
@@ -638,7 +661,7 @@ export default function Blockchain() {
                     variant={selectedPlan === 'pro' ? 'premium' : 'outline'}
                     onClick={() => setSelectedPlan('pro')}
                   >
-                    {selectedPlan === 'pro' ? 'Selected' : 'Select Plan'}
+                    Get Started
                   </Button>
                 </div>
               </Card>
@@ -654,36 +677,17 @@ export default function Blockchain() {
                 <div className="space-y-4">
                   <div>
                     <h3 className="text-xl font-bold">Custom</h3>
-                    <p className="text-sm text-muted-foreground">Tailored solutions</p>
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-baseline space-x-1">
-                      <span className="text-3xl font-bold">Custom</span>
+                      <span className="text-3xl font-bold">Contact us</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      Contact for pricing
-                    </p>
+                    <p className="text-muted-foreground">/month</p>
                   </div>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Dedicated blockchain team
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Custom smart contract integration
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Enterprise compliance
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      SLA guarantees
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      24/7 dedicated support
+                      Unlimited bots
                     </li>
                   </ul>
                   <Button 
@@ -700,22 +704,22 @@ export default function Blockchain() {
 
           {/* Voice Agent Add-on */}
           <ScrollReveal delay={500}>
-            <Card className="mt-12 p-6 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 border-line">
+            <Card className="mt-12 p-6 bg-slate-800/80 backdrop-blur-sm border-slate-600">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center">
                     <HeadphonesIcon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold">Voice AI Agent Add-On</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="text-xl font-bold text-white">Voice AI Agent Add-On</h3>
+                    <p className="text-slate-300">
                       Discord calls, community AMAs, and phone support capabilities
                     </p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold">$599/month</div>
-                  <p className="text-sm text-muted-foreground">Available for all plans</p>
+                  <div className="text-2xl font-bold text-white">$599/month</div>
+                  <p className="text-sm text-slate-300">Available for all plans</p>
                 </div>
               </div>
             </Card>
