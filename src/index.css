@@ -40,8 +40,8 @@ All colors MUST be HSL.
     --radius: 1.25rem; /* 20px for premium feel */
     
     /* Custom Design Tokens */
-    --ember: 17 100% 70%;      /* #FF966B - lighter ember */
-    --ember-glow: 17 100% 85%; /* #FFCAB5 - much lighter ember */
+    --ember: 17 100% 55%;      /* #FF6A2C - rich dark ember (matches primary) */
+    --ember-glow: 17 100% 70%; /* #FF966B - lighter ember for glow effects */
     --aqua: 187 85% 65%;       /* #4FDDB7 - lighter wellness aqua */
     --aqua-glow: 187 85% 80%;  /* #8EE7D0 - much lighter aqua */
     --ink: 213 33% 93%;        /* #EAF0F6 */

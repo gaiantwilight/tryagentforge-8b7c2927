@@ -494,220 +494,147 @@ export default function Blockchain() {
           </ScrollReveal>
 
           <div className="grid lg:grid-cols-4 gap-8">
-            {/* Wellness Starter Plan */}
-            <ScrollReveal delay={100}>
-              <Card className={`p-6 border-2 transition-all hover-lift ${
-                selectedPlan === 'starter' 
-                  ? 'border-primary shadow-lg ring-4 ring-primary/20' 
-                  : 'border-line hover:border-primary/50'
-              }`}>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold">Starter</h3>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="flex items-baseline space-x-1">
-                      <span className="text-3xl font-bold">$999</span>
+            {[
+              {
+                name: "STARTER",
+                price: "$697",
+                period: "/mo",
+                setup: "$497 setup",
+                features: [
+                  "1 AI Agent (Web chat OR SMS)",
+                  "Lead capture + Calendar booking",
+                  "Community FAQ coverage (safe defaults: no price predictions)",
+                  "Up to 1,000 conversations/mo included",
+                  "Adjustments: every 60 days",
+                  "No reporting"
+                ],
+                cta: "Get Started",
+                popular: false
+              },
+              {
+                name: "GROWTH",
+                price: "$997",
+                period: "/mo",
+                setup: "$747 setup",
+                features: [
+                  "1 AI Agent (Web chat + SMS, or Web + Voice)",
+                  "All Starter features",
+                  "Multi-channel coverage (Discord/Telegram/web)",
+                  "Advanced escalation + moderation filters (anti-scam)",
+                  "Up to 3,000 conversations/mo included",
+                  "Adjustments: monthly",
+                  "Monthly reporting included"
+                ],
+                cta: "Get Started",
+                popular: true
+              },
+              {
+                name: "PRO",
+                price: "$1,497",
+                period: "/mo",
+                setup: "$999 setup",
+                features: [
+                  "2 AI Agents (Web + SMS + Voice, or custom mix)",
+                  "All Growth features",
+                  "Developer Docs Copilot (SDK/API Q&A)",
+                  "Up to 5,000 conversations/mo included",
+                  "Custom integrations & analytics dashboards",
+                  "Adjustments: every 2 weeks",
+                  "Weekly reporting"
+                ],
+                cta: "Get Started",
+                popular: false
+              },
+              {
+                name: "CUSTOM",
+                price: "Contact us",
+                period: "",
+                setup: "",
+                features: [
+                  "Unlimited bots",
+                  "Everything in Pro",
+                  "Fully tailored integrations & compliance checks"
+                ],
+                cta: "Contact Sales",
+                popular: false
+              }
+            ].map((tier, index) => (
+              <ScrollReveal key={index} delay={100 + index * 100}>
+                <Card className={`p-6 border-2 transition-all hover-lift relative ${
+                  selectedPlan === index.toString() 
+                    ? 'border-primary shadow-lg ring-4 ring-primary/20' 
+                    : tier.popular 
+                      ? 'border-primary bg-gradient-to-br from-primary/5 to-primary/10 shadow-xl' 
+                      : 'border-line hover:border-primary/50'
+                }`}>
+                  {tier.popular && (
+                    <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-gradient-ember text-white">
+                      Most Popular
+                    </Badge>
+                  )}
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-white">{tier.name}</h3>
                     </div>
-                     <p className="text-sm text-muted-foreground">
-                       + $499 setup
-                     </p>
-                    <p className="text-muted-foreground">/month</p>
+                    <div className="space-y-1">
+                      <div className="flex items-baseline space-x-1">
+                        <span className="text-3xl font-bold text-white">{tier.price}</span>
+                        <span className="text-slate-300">{tier.period}</span>
+                      </div>
+                      {tier.setup && (
+                        <p className="text-sm text-slate-400">+ {tier.setup}</p>
+                      )}
+                    </div>
+                    <ul className="space-y-2 text-sm">
+                      {tier.features.map((feature, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-slate-300">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button 
+                      className="w-full"
+                      variant={selectedPlan === index.toString() ? 'premium' : 'outline'}
+                      onClick={() => setSelectedPlan(index.toString())}
+                    >
+                      {tier.cta}
+                    </Button>
                   </div>
-                   <ul className="space-y-2 text-sm">
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       1 AI Agent (Web chat + SMS)
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Lead capture + calendar booking for partners/investors
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Community FAQ coverage (safe defaults: no price predictions or trading advice)
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       1,000 conversations/mo included
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Monthly reporting
-                     </li>
-                   </ul>
-                  <Button 
-                    className="w-full"
-                    variant={selectedPlan === 'starter' ? 'premium' : 'outline'}
-                    onClick={() => setSelectedPlan('starter')}
-                  >
-                    Get Started
-                  </Button>
+                </Card>
+              </ScrollReveal>
+            ))}
+
+            {/* Voice Add-on */}
+            <ScrollReveal delay={500}>
+              <Card className="lg:col-span-4 p-6 border border-line bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center">
+                      <HeadphonesIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-white">Voice AI Agent Add-On</h3>
+                      <p className="text-slate-300">
+                        Discord calls, community AMAs, and phone support capabilities
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-center md:text-right">
+                    <div className="text-2xl font-bold text-white">$599/mo (flat unlimited)</div>
+                    <p className="text-sm text-slate-300">Available for all plans</p>
+                  </div>
                 </div>
               </Card>
             </ScrollReveal>
 
-            {/* Wellness Growth Plan */}
-            <ScrollReveal delay={200}>
-              <Card className={`p-6 border-2 transition-all hover-lift relative ${
-                selectedPlan === 'growth' 
-                  ? 'border-primary shadow-lg ring-4 ring-primary/20' 
-                  : 'border-line hover:border-primary/50'
-              }`}>
-                <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-gradient-ember text-white">
-                  Most Popular
-                </Badge>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold">Growth</h3>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="flex items-baseline space-x-1">
-                      <span className="text-3xl font-bold">$1,749</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      + $749 setup
-                    </p>
-                    <p className="text-muted-foreground">/month</p>
-                  </div>
-                   <ul className="space-y-2 text-sm">
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       2 AI Agents (e.g. Website chat + Discord or Website chat + Telegram)
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       All Starter features
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Multi-channel coverage (Discord/Telegram/web)
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Advanced escalation + moderation filters (anti-scam, anti-seed phrase)
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       3,000 conversations/mo included
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Monthly reporting
-                     </li>
-                   </ul>
-                  <Button 
-                    className="w-full"
-                    variant={selectedPlan === 'growth' ? 'premium' : 'outline'}
-                    onClick={() => setSelectedPlan('growth')}
-                  >
-                    Get Started
-                  </Button>
-                </div>
-              </Card>
-            </ScrollReveal>
-
-            {/* Wellness Pro Plan */}
-            <ScrollReveal delay={300}>
-              <Card className={`p-6 border-2 transition-all hover-lift ${
-                selectedPlan === 'pro' 
-                  ? 'border-primary shadow-lg ring-4 ring-primary/20' 
-                  : 'border-line hover:border-primary/50'
-              }`}>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold">Pro</h3>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="flex items-baseline space-x-1">
-                      <span className="text-3xl font-bold">$2,449</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      + $999 setup
-                    </p>
-                    <p className="text-muted-foreground">/month</p>
-                  </div>
-                   <ul className="space-y-2 text-sm">
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       2 AI Agents (Website + Discord/Telegram or custom mix)
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       All Growth features
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       5,000 conversations/mo included
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Developer Docs Copilot (SDK/API Q&A)
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Custom integrations & analytics
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Weekly reporting
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Discord/Telegram bot included
-                     </li>
-                   </ul>
-                  <Button 
-                    className="w-full"
-                    variant={selectedPlan === 'pro' ? 'premium' : 'outline'}
-                    onClick={() => setSelectedPlan('pro')}
-                  >
-                    Get Started
-                  </Button>
-                </div>
-              </Card>
-            </ScrollReveal>
-
-            {/* Custom Plan */}
-            <ScrollReveal delay={400}>
-              <Card className={`p-6 border-2 transition-all hover-lift ${
-                selectedPlan === 'custom' 
-                  ? 'border-primary shadow-lg ring-4 ring-primary/20' 
-                  : 'border-line hover:border-primary/50'
-              }`}>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold">Custom</h3>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="flex items-baseline space-x-1">
-                      <span className="text-3xl font-bold">Contact us</span>
-                    </div>
-                    <p className="text-muted-foreground">/month</p>
-                  </div>
-                   <ul className="space-y-2 text-sm">
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Unlimited agents (community + dev + voice AI)
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Everything in Pro
-                     </li>
-                     <li className="flex items-center gap-2">
-                       <CheckCircle className="w-4 h-4 text-primary" />
-                       Fully tailored integrations & governance flows
-                     </li>
-                   </ul>
-                  <Button 
-                    className="w-full"
-                    variant={selectedPlan === 'custom' ? 'premium' : 'outline'}
-                    onClick={() => setSelectedPlan('custom')}
-                  >
-                    {selectedPlan === 'custom' ? 'Selected' : 'Contact Sales'}
-                  </Button>
-                </div>
-              </Card>
+            {/* Setup Note */}
+            <ScrollReveal delay={600}>
+              <div className="lg:col-span-4 text-center">
+                <p className="text-sm text-slate-400">
+                  Setup fee covers training, evaluation checks, and onboarding.
+                </p>
+              </div>
             </ScrollReveal>
           </div>
 

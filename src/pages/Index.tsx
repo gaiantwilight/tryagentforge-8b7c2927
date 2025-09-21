@@ -337,57 +337,62 @@ export default function Index() {
             <div className="grid lg:grid-cols-4 gap-8">
               {[
                 {
-                  name: "Starter",
-                  price: "$999",
-                  period: "/month",
-                  setup: "+ $499 setup",
+                  name: "STARTER",
+                  price: "$697",
+                  period: "/mo",
+                  setup: "$497 setup",
                   features: [
-                    "1 AI Agent (Web chat + SMS)",
+                    "1 AI Agent (Web chat OR SMS)",
                     "Lead capture + Calendar booking",
                     "Booking recovery (missed booking follow-ups)",
-                    "1,000 conversations/mo included",
-                    "Monthly reporting"
+                    "Up to 1,000 conversations/mo included",
+                    "Adjustments: every 60 days",
+                    "No reporting"
                   ],
                   cta: "Get Started",
                   popular: false
                 },
                 {
-                  name: "Growth",
-                  price: "$1,749", 
-                  period: "/month",
-                  setup: "+ $749 setup",
+                  name: "GROWTH",
+                  price: "$997",
+                  period: "/mo",
+                  setup: "$747 setup",
                   features: [
-                    "2 AI Agents (e.g., Web + SMS or Web + Voice)",
+                    "1 AI Agent (Web chat + SMS, or Web + Voice)",
                     "All Starter features",
-                    "Advanced booking recovery + multi-channel",
-                    "3,000 conversations/mo included",
-                    "Monthly reporting"
+                    "Advanced booking recovery (multi-channel, escalations)",
+                    "Up to 3,000 conversations/mo included",
+                    "Adjustments: monthly",
+                    "Monthly reporting included"
                   ],
                   cta: "Get Started",
                   popular: true
                 },
                 {
-                  name: "Pro",
-                  price: "$2,449",
-                  period: "/month",
-                  setup: "+ $999 setup", 
+                  name: "PRO",
+                  price: "$1,497",
+                  period: "/mo",
+                  setup: "$999 setup",
                   features: [
-                    "2 AI Agents (Web + Voice or custom mix)",
+                    "2 AI Agents (Web + SMS + Voice, or custom mix)",
                     "All Growth features",
-                    "5,000 conversations/mo included",
-                    "Custom integrations & analytics",
+                    "Up to 5,000 conversations/mo included",
+                    "Custom integrations & analytics dashboards",
+                    "Adjustments: every 2 weeks",
                     "Weekly reporting"
                   ],
                   cta: "Get Started",
                   popular: false
                 },
                 {
-                  name: "Custom",
+                  name: "CUSTOM",
                   price: "Contact us",
-                  period: "/month",
+                  period: "",
                   setup: "",
                   features: [
-                    "Unlimited bots"
+                    "Unlimited bots",
+                    "Everything in Pro",
+                    "Fully tailored integrations & compliance checks"
                   ],
                   cta: "Contact Sales",
                   popular: false
@@ -457,11 +462,11 @@ export default function Index() {
                   <div className="flex items-center justify-center">
                     <div className="flex items-center justify-between bg-ember/10 border border-ember/20 rounded-lg px-4 py-3 max-w-sm w-full">
                       <span className="text-ember font-medium">Voice AI Agent</span>
-                      <span className="font-bold">$599/mo</span>
+                      <span className="font-bold">$599/mo (flat unlimited)</span>
                     </div>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Setup fee covers agent training, testing, and onboarding.
+                    Setup fee covers training, evaluation checks, and onboarding.
                   </p>
                 </div>
               </div>
