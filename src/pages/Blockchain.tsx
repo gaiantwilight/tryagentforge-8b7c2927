@@ -69,9 +69,6 @@ export default function Blockchain() {
             <Link to="/wellness" className="font-medium hover:text-primary transition-colors">
               Wellness
             </Link>
-            <span className="font-medium text-ember">
-              Blockchain
-            </span>
             <button 
               onClick={() => scrollToSection('services')}
               className="font-medium hover:text-primary transition-colors"
@@ -143,10 +140,6 @@ export default function Blockchain() {
                   >
                     Get Started
                     <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                  <Button variant="outline" size="lg" className="border-slate-400 text-slate-300 hover:bg-slate-800">
-                    <MessageSquare className="w-5 h-5 mr-2" />
-                    View Case Studies
                   </Button>
                 </div>
               </ScrollReveal>
@@ -516,33 +509,33 @@ export default function Blockchain() {
                     <div className="flex items-baseline space-x-1">
                       <span className="text-3xl font-bold">$999</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      $499 setup
-                    </p>
+                     <p className="text-sm text-muted-foreground">
+                       + $499 setup
+                     </p>
                     <p className="text-muted-foreground">/month</p>
                   </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      1 AI Agent (Web chat + SMS)
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Lead capture + Calendar booking
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Booking recovery (missed booking follow-ups)
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      1,000 conversations/mo included
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Monthly reporting
-                    </li>
-                  </ul>
+                   <ul className="space-y-2 text-sm">
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       1 AI Agent (Web chat + SMS)
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Lead capture + calendar booking for partners/investors
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Community FAQ coverage (safe defaults: no price predictions or trading advice)
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       1,000 conversations/mo included
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Monthly reporting
+                     </li>
+                   </ul>
                   <Button 
                     className="w-full"
                     variant={selectedPlan === 'starter' ? 'premium' : 'outline'}
@@ -577,28 +570,32 @@ export default function Blockchain() {
                     </p>
                     <p className="text-muted-foreground">/month</p>
                   </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      2 AI Agents (e.g., Web + SMS or Web + Voice)
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      All Starter features
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Advanced booking recovery + multi-channel
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      3,000 conversations/mo included
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Monthly reporting
-                    </li>
-                  </ul>
+                   <ul className="space-y-2 text-sm">
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       2 AI Agents (e.g. Website chat + Discord or Website chat + Telegram)
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       All Starter features
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Multi-channel coverage (Discord/Telegram/web)
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Advanced escalation + moderation filters (anti-scam, anti-seed phrase)
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       3,000 conversations/mo included
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Monthly reporting
+                     </li>
+                   </ul>
                   <Button 
                     className="w-full"
                     variant={selectedPlan === 'growth' ? 'premium' : 'outline'}
@@ -630,32 +627,36 @@ export default function Blockchain() {
                     </p>
                     <p className="text-muted-foreground">/month</p>
                   </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      2 AI Agents (Web + Voice or custom mix)
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      All Growth features
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      5,000 conversations/mo included
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Custom integrations & analytics
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Weekly reporting
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Telegram/Discord bot included
-                    </li>
-                  </ul>
+                   <ul className="space-y-2 text-sm">
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       2 AI Agents (Website + Discord/Telegram or custom mix)
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       All Growth features
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       5,000 conversations/mo included
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Developer Docs Copilot (SDK/API Q&A)
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Custom integrations & analytics
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Weekly reporting
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Discord/Telegram bot included
+                     </li>
+                   </ul>
                   <Button 
                     className="w-full"
                     variant={selectedPlan === 'pro' ? 'premium' : 'outline'}
@@ -684,12 +685,20 @@ export default function Blockchain() {
                     </div>
                     <p className="text-muted-foreground">/month</p>
                   </div>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      Unlimited bots
-                    </li>
-                  </ul>
+                   <ul className="space-y-2 text-sm">
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Unlimited agents (community + dev + voice AI)
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Everything in Pro
+                     </li>
+                     <li className="flex items-center gap-2">
+                       <CheckCircle className="w-4 h-4 text-primary" />
+                       Fully tailored integrations & governance flows
+                     </li>
+                   </ul>
                   <Button 
                     className="w-full"
                     variant={selectedPlan === 'custom' ? 'premium' : 'outline'}
@@ -818,9 +827,9 @@ export default function Blockchain() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Services</h4>
+              <h4 className="font-semibold mb-4">Products</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/" className="hover:text-foreground transition-colors">General AI Agents</Link></li>
+                <li><Link to="/" className="hover:text-foreground transition-colors">Home</Link></li>
                 <li><Link to="/wellness" className="hover:text-foreground transition-colors">Wellness Solutions</Link></li>
                 <li><span className="text-foreground">Blockchain & Web3</span></li>
               </ul>
@@ -839,11 +848,12 @@ export default function Blockchain() {
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="tel:+1-XXX-XXX-XXXX" className="hover:text-foreground transition-colors">
-                    (XXX) XXX-XXXX
+                  <a href="tel:+1-714-475-7502" className="hover:text-foreground transition-colors">
+                    714-475-7502
                   </a>
                 </li>
-                <li>Garden Grove, CA</li>
+                <li>Huntington Beach, Orange County</li>
+                <li>Los Angeles, Long Beach</li>
               </ul>
             </div>
           </div>

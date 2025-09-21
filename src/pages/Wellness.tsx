@@ -599,6 +599,7 @@ export default function Wellness() {
                   <button onClick={() => scrollToSection('benefits')} className="block text-muted-foreground hover:text-aqua transition-colors">Benefits</button>
                   <button onClick={() => scrollToSection('pricing')} className="block text-muted-foreground hover:text-aqua transition-colors">Pricing</button>
                   <button onClick={() => scrollToSection('demo')} className="block text-muted-foreground hover:text-aqua transition-colors">Demo</button>
+                  <Link to="/blockchain" className="block text-muted-foreground hover:text-aqua transition-colors">Blockchain</Link>
                 </div>
               </div>
               
@@ -606,7 +607,6 @@ export default function Wellness() {
                 <h4 className="font-semibold">Company</h4>
                 <div className="space-y-2 text-sm">
                   <Link to="/" className="block text-muted-foreground hover:text-aqua transition-colors">Home</Link>
-                  <Link to="/blockchain" className="block text-muted-foreground hover:text-aqua transition-colors">Blockchain</Link>
                   <Link to="/affiliate" className="block text-muted-foreground hover:text-aqua transition-colors">Affiliate</Link>
                   <Link to="/privacy" className="block text-muted-foreground hover:text-aqua transition-colors">Privacy</Link>
                   <Link to="/terms" className="block text-muted-foreground hover:text-aqua transition-colors">Terms</Link>

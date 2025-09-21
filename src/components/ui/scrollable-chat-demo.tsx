@@ -177,7 +177,7 @@ export function ScrollableChatDemo({ theme = "ember" }: ScrollableChatDemoProps)
                             ${
                               message.isAgent
                                 ? `${agentBubbleClass} rounded-bl-sm`
-                                : 'bg-muted/80 text-foreground rounded-br-sm border border-line/50'
+                                : 'bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-200 rounded-br-sm border border-line/50'
                             }
                           `}
                         >

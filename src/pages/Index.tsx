@@ -103,9 +103,6 @@ export default function Index() {
                 <Link to="/wellness" className="text-muted-foreground hover:text-foreground transition-colors">
                   Wellness
                 </Link>
-                <Link to="/blockchain" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Blockchain
-                </Link>
                 <button onClick={() => scrollToSection('how-it-works')} className="text-muted-foreground hover:text-foreground transition-colors">
                   How it Works
                 </button>
