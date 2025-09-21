@@ -210,6 +210,9 @@ export default function Wellness() {
                 <Link to="/wellness" className="text-aqua font-medium">
                   Wellness
                 </Link>
+                <Link to="/blockchain" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Blockchain
+                </Link>
                 <button onClick={() => scrollToSection('pricing')} className="text-muted-foreground hover:text-foreground transition-colors">
                   Pricing
                 </button>
@@ -221,7 +224,7 @@ export default function Wellness() {
               {/* Desktop CTA Buttons */}
               <div className="hidden lg:flex items-center space-x-4">
                 <Button variant="ghost" size="sm" asChild>
-                  <a href="tel:+1-XXX-XXX-XXXX">
+                  <a href="tel:+1-714-475-7502">
                     <Phone className="w-4 h-4 mr-2" />
                     Call Us
                   </a>
@@ -599,20 +602,23 @@ export default function Wellness() {
                 </div>
               </div>
               
-              <div className="space-y-4">
+                <div className="space-y-4">
                 <h4 className="font-semibold">Company</h4>
                 <div className="space-y-2 text-sm">
+                  <Link to="/" className="block text-muted-foreground hover:text-aqua transition-colors">Home</Link>
+                  <Link to="/blockchain" className="block text-muted-foreground hover:text-aqua transition-colors">Blockchain</Link>
                   <Link to="/affiliate" className="block text-muted-foreground hover:text-aqua transition-colors">Affiliate</Link>
                   <Link to="/privacy" className="block text-muted-foreground hover:text-aqua transition-colors">Privacy</Link>
                   <Link to="/terms" className="block text-muted-foreground hover:text-aqua transition-colors">Terms</Link>
                 </div>
               </div>
               
-              <div className="space-y-4">
+                <div className="space-y-4">
                 <h4 className="font-semibold">Contact</h4>
                 <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>Garden Grove, CA</p>
-                  <a href="tel:+1-XXX-XXX-XXXX" className="block hover:text-aqua transition-colors">+1-XXX-XXX-XXXX</a>
+                  <p>Huntington Beach, Orange County</p>
+                  <p>Los Angeles, Long Beach</p>
+                  <a href="tel:+1-714-475-7502" className="block hover:text-aqua transition-colors">714-475-7502</a>
                 </div>
               </div>
             </div>

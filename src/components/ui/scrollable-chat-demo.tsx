@@ -11,7 +11,7 @@ interface ChatMessage {
 
 const chatPanels = [
   {
-    title: "Customer Support",
+    title: "Customer Inquiries",
     messages: [
       { id: 1, text: "Hi! What are your hours?", isAgent: false, timestamp: "2:14 PM" },
       { id: 2, text: "We're open 24/7! How can I help you today?", isAgent: true, timestamp: "2:14 PM" },
@@ -20,7 +20,7 @@ const chatPanels = [
     ]
   },
   {
-    title: "Booking Assistant",
+    title: "Smart Booking",
     messages: [
       { id: 1, text: "I'd like to book a consultation", isAgent: false, timestamp: "3:22 PM" },
       { id: 2, text: "Great! I have availability this week. What day works best?", isAgent: true, timestamp: "3:22 PM" },
@@ -29,7 +29,7 @@ const chatPanels = [
     ]
   },
   {
-    title: "Lead Qualification",
+    title: "Lead Conversion",
     messages: [
       { id: 1, text: "Tell me about your pricing", isAgent: false, timestamp: "4:15 PM" },
       { id: 2, text: "I'd be happy to help! What type of service are you interested in?", isAgent: true, timestamp: "4:15 PM" },
@@ -137,10 +137,10 @@ export function ScrollableChatDemo({ theme = "ember" }: ScrollableChatDemoProps)
         <div 
           ref={scrollContainerRef}
           className="flex transition-transform duration-500 ease-out"
-          style={{ transform: `translateX(-${currentPanel * 33.333}%)` }}
+          style={{ transform: `translateX(-${currentPanel * 33.333}%)`, width: `${chatPanels.length * 100}%` }}
         >
           {chatPanels.map((panel, panelIndex) => (
-            <div key={panelIndex} className="w-1/3 flex-shrink-0 p-6">
+            <div key={panelIndex} className="flex-shrink-0 p-6" style={{ width: `${100 / chatPanels.length}%` }}>
               <div className="space-y-4">
                 {/* Panel Header */}
                 <div className="text-center border-b border-line/30 pb-4">

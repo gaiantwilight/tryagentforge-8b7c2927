@@ -62,13 +62,16 @@ export default function Blockchain() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+              <nav className="hidden lg:flex items-center space-x-8">
             <Link to="/" className="font-medium hover:text-primary transition-colors">
               Home
             </Link>
             <Link to="/wellness" className="font-medium hover:text-primary transition-colors">
               Wellness
             </Link>
+            <span className="font-medium text-ember">
+              Blockchain
+            </span>
             <button 
               onClick={() => scrollToSection('services')}
               className="font-medium hover:text-primary transition-colors"
@@ -92,7 +95,7 @@ export default function Blockchain() {
               Get a Demo
             </Button>
             <Button variant="outline" asChild>
-              <a href="tel:+1-XXX-XXX-XXXX">
+              <a href="tel:+1-714-475-7502">
                 <Phone className="w-4 h-4 mr-2" />
                 Call Us
               </a>
@@ -188,21 +191,21 @@ export default function Blockchain() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Community Bots</h3>
                 <p className="text-muted-foreground mb-4">
-                  Discord & Telegram moderation, auto-reply, spam filtering, and community engagement automation.
+                  Handle customer inquiries 24/7, keep your community informed with intelligent responses, and moderate Discord & Telegram channels. Trained on your specific data and documentation.
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    24/7 moderation & spam detection
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Automated FAQ responses
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    Role management & verification
-                  </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                      24/7 customer inquiry handling
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                      Trained on your specific data
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-primary" />
+                      Community education & support
+                    </li>
                 </ul>
               </Card>
             </ScrollReveal>
@@ -475,35 +478,6 @@ export default function Blockchain() {
             </p>
           </ScrollReveal>
 
-          {/* Billing Toggle */}
-          <div className="flex justify-center mb-12">
-            <div className="flex items-center space-x-4 bg-muted p-1 rounded-full">
-              <button
-                onClick={() => setIsAnnual(false)}
-                className={`px-6 py-2 rounded-full transition-all ${
-                  !isAnnual
-                    ? 'bg-background text-foreground shadow-sm'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                Monthly
-              </button>
-              <button
-                onClick={() => setIsAnnual(true)}
-                className={`px-6 py-2 rounded-full transition-all ${
-                  isAnnual
-                    ? 'bg-background text-foreground shadow-sm'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                Annual
-                <Badge variant="secondary" className="ml-2 text-xs">
-                  Save 20%
-                </Badge>
-              </button>
-            </div>
-          </div>
-
           <div className="grid lg:grid-cols-4 gap-8">
             {/* Starter Plan */}
             <ScrollReveal delay={100}>
@@ -519,31 +493,29 @@ export default function Blockchain() {
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-baseline space-x-1">
-                      <span className="text-3xl font-bold">
-                        ${isAnnual ? '400' : '500'}
-                      </span>
+                      <span className="text-3xl font-bold">$999</span>
                       <span className="text-muted-foreground">/month</span>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      + $500 setup fee
+                      + $499 setup
                     </p>
                   </div>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Basic Discord/Telegram bot
+                      1 AI Agent (Web chat + SMS)
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      FAQ automation
+                      1,000 conversations/mo
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Basic moderation
+                      Community bot integration
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      Token price alerts
+                      Monthly reporting
                     </li>
                   </ul>
                   <Button 

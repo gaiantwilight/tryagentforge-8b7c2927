@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 
 export default function Index() {
+  const [selectedPlan, setSelectedPlan] = useState(1); // Default to Growth plan
   const [countUp, setCountUp] = useState({
     hours: 0,
     booking: 0,
@@ -114,9 +115,6 @@ export default function Index() {
                 <button onClick={() => scrollToSection('pricing')} className="text-muted-foreground hover:text-foreground transition-colors">
                   Pricing
                 </button>
-                <Link to="/affiliate" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Affiliate
-                </Link>
               </nav>
 
               {/* CTA Buttons */}
@@ -429,14 +427,19 @@ export default function Index() {
                     </ul>
                     
                     <Button 
-                      onClick={() => scrollToSection('demo-form')}
+                      onClick={() => {
+                        setSelectedPlan(index);
+                        scrollToSection('demo-form');
+                      }}
                       className={`w-full ${
-                        tier.popular 
+                        selectedPlan === index 
                           ? 'bg-gradient-ember hover:opacity-90 text-white' 
-                          : 'bg-muted hover:bg-muted/80'
+                          : tier.popular 
+                            ? 'bg-gradient-ember hover:opacity-90 text-white' 
+                            : 'bg-muted hover:bg-muted/80'
                       }`}
                     >
-                      {tier.cta}
+                      {selectedPlan === index ? 'Selected' : tier.cta}
                     </Button>
                   </Card>
                 </ScrollReveal>
@@ -536,7 +539,7 @@ export default function Index() {
               <div className="space-y-4">
                 <h3 className="font-sora font-bold text-xl">AgentForge</h3>
                 <p className="text-muted-foreground text-sm">
-                  AI agents for bookings & customer support. Serving businesses in Garden Grove & Orange County.
+                  AI agents for bookings & customer support. Serving businesses in Huntington Beach, Orange County, Los Angeles & Long Beach.
                 </p>
               </div>
               
@@ -550,10 +553,10 @@ export default function Index() {
                 </div>
               </div>
               
-              <div className="space-y-4">
+                <div className="space-y-4">
                 <h4 className="font-semibold">Company</h4>
                 <div className="space-y-2 text-sm">
-                  <Link to="/affiliate" className="block text-muted-foreground hover:text-primary transition-colors">Affiliate</Link>
+                  <Link to="/blockchain" className="block text-muted-foreground hover:text-primary transition-colors">Blockchain</Link>
                   <Link to="/privacy" className="block text-muted-foreground hover:text-primary transition-colors">Privacy</Link>
                   <Link to="/terms" className="block text-muted-foreground hover:text-primary transition-colors">Terms</Link>
                 </div>
@@ -562,7 +565,9 @@ export default function Index() {
               <div className="space-y-4">
                 <h4 className="font-semibold">Contact</h4>
                 <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>Garden Grove, CA</p>
+                  <p>Huntington Beach, Orange County</p>
+                  <p>Los Angeles, Long Beach</p>
+                  <a href="tel:+1-714-475-7502" className="block hover:text-primary transition-colors">714-475-7502</a>
                 </div>
               </div>
             </div>
