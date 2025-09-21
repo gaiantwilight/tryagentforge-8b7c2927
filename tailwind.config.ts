@@ -53,6 +53,8 @@ export default {
         },
         ember: "hsl(var(--ember))",
         "ember-glow": "hsl(var(--ember-glow))",
+        aqua: "hsl(var(--aqua))",
+        "aqua-glow": "hsl(var(--aqua-glow))",
         ink: "hsl(var(--ink))",
         line: "hsl(var(--line))",
       },

@@ -42,13 +42,17 @@ All colors MUST be HSL.
     /* Custom Design Tokens */
     --ember: 17 100% 59%;      /* #FF6A2C */
     --ember-glow: 17 100% 75%; /* #FFB88A */
+    --aqua: 187 85% 53%;       /* #1DD1A1 - wellness aqua */
+    --aqua-glow: 187 85% 70%;  /* #4FDDB7 - lighter aqua */
     --ink: 213 33% 93%;        /* #EAF0F6 */
     --line: 0 0% 100% / 8%;    /* rgba(255,255,255,.08) */
     
     /* Premium Gradients */
     --gradient-ember: linear-gradient(135deg, hsl(var(--ember)), hsl(var(--ember-glow)));
+    --gradient-aqua: linear-gradient(135deg, hsl(var(--aqua)), hsl(var(--aqua-glow)));
     --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(220 29% 10%));
     --gradient-hero: radial-gradient(ellipse at center, hsl(var(--ember) / 0.1), transparent 70%);
+    --gradient-water: radial-gradient(ellipse at center, hsl(var(--aqua) / 0.08), transparent 70%);
     
     /* Shadows */
     --shadow-premium: 0 20px 40px -12px hsl(220 33% 2% / 0.5);
@@ -106,16 +110,62 @@ All colors MUST be HSL.
 
   .ember-particle {
     position: absolute;
-    width: 2px;
-    height: 2px;
-    background: hsl(var(--ember));
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, hsl(var(--ember) / 0.8), hsl(var(--ember) / 0.2));
     border-radius: 50%;
-    animation: float 8s infinite ease-in-out;
+    pointer-events: none;
+    animation: emberFloat 8s infinite linear;
   }
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0; }
-    50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
+  /* Water canvas styles */
+  .water-canvas {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .water-ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid hsl(var(--aqua) / 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: waterRipple 8s infinite ease-out;
+    transform-origin: center;
+  }
+
+  @keyframes emberFloat {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes waterRipple {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(8);
+      opacity: 0;
+    }
   }
 
   /* Scroll reveal animations */
