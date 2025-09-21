@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from './button';
+import { useState, useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "./button";
 
 interface ChatMessage {
   id: number;
@@ -17,15 +17,24 @@ const sampleMessages: ChatMessage[] = [
   { id: 5, text: "Around $5,000 per month", isAgent: false, timestamp: "2:16 PM" },
   { id: 6, text: "Great! Based on your budget, I recommend our Growth package. Would you like me to schedule a call with Sarah, our strategy director?", isAgent: true, timestamp: "2:16 PM" },
   { id: 7, text: "Yes, that would be perfect!", isAgent: false, timestamp: "2:17 PM" },
-  { id: 8, text: "Excellent! I've sent you a calendar link via SMS. The next available slot is Thursday at 2 PM. Does that work?", isAgent: true, timestamp: "2:17 PM" },
+  { id: 8, text: "Excellent! I've sent you a calendar link via SMS. The next available slot is Thursday at 2 PM. Does that work?", isAgent: true, timestamp: "2:17 PM" }
 ];
 
-export const ChatShowcase = () => {
+interface ChatShowcaseProps {
+  messages?: ChatMessage[];
+  theme?: "ember" | "aqua";
+}
+
+export function ChatShowcase({ messages = sampleMessages, theme = "ember" }: ChatShowcaseProps) {
   const [visibleMessages, setVisibleMessages] = useState<ChatMessage[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
+
+  const agentBubbleClass = theme === "aqua" 
+    ? "bg-aqua text-background" 
+    : "bg-gradient-ember text-white";
+
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const autoScrollRef = useRef<NodeJS.Timeout>();
 
   // Handle reduced motion preference
   useEffect(() => {
@@ -39,39 +48,29 @@ export const ChatShowcase = () => {
   useEffect(() => {
     if (!isAutoScrolling) return;
 
-    autoScrollRef.current = setInterval(() => {
-      setCurrentIndex((prev) => {
-        const nextIndex = (prev + 1) % sampleMessages.length;
-        return nextIndex;
-      });
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % messages.length);
     }, 3000);
 
-    return () => {
-      if (autoScrollRef.current) {
-        clearInterval(autoScrollRef.current);
-      }
-    };
-  }, [isAutoScrolling]);
+    return () => clearInterval(interval);
+  }, [isAutoScrolling, messages.length]);
 
-  // Update visible messages based on current index
+  // Update visible messages when currentIndex changes
   useEffect(() => {
-    const messagesToShow = 4; // Show 4 messages at a time
-    const start = currentIndex;
-    const messages = [];
-    
-    for (let i = 0; i < messagesToShow; i++) {
-      const index = (start + i) % sampleMessages.length;
-      messages.push(sampleMessages[index]);
+    const newVisibleMessages = [];
+    for (let i = 0; i < 4; i++) {
+      const messageIndex = (currentIndex + i) % messages.length;
+      newVisibleMessages.push(messages[messageIndex]);
     }
-    
-    setVisibleMessages(messages);
-  }, [currentIndex]);
+    setVisibleMessages(newVisibleMessages);
+  }, [currentIndex, messages]);
 
-  // Scroll to show current messages
+  // Scroll to current message group
   useEffect(() => {
     if (scrollContainerRef.current) {
+      const scrollPosition = Math.floor(currentIndex / 4) * scrollContainerRef.current.offsetWidth;
       scrollContainerRef.current.scrollTo({
-        left: currentIndex * 320, // Approximate width of message group
+        left: scrollPosition,
         behavior: 'smooth'
       });
     }
@@ -79,12 +78,12 @@ export const ChatShowcase = () => {
 
   const goToPrevious = () => {
     setIsAutoScrolling(false);
-    setCurrentIndex((prev) => (prev - 1 + sampleMessages.length) % sampleMessages.length);
+    setCurrentIndex((prev) => (prev - 1 + messages.length) % messages.length);
   };
 
   const goToNext = () => {
     setIsAutoScrolling(false);
-    setCurrentIndex((prev) => (prev + 1) % sampleMessages.length);
+    setCurrentIndex((prev) => (prev + 1) % messages.length);
   };
 
   return (
@@ -97,6 +96,7 @@ export const ChatShowcase = () => {
             size="sm" 
             onClick={goToPrevious}
             className="w-8 h-8 p-0"
+            aria-label="Previous messages"
           >
             <ChevronLeft className="w-4 h-4" />
           </Button>
@@ -105,40 +105,40 @@ export const ChatShowcase = () => {
             size="sm" 
             onClick={goToNext}
             className="w-8 h-8 p-0"
+            aria-label="Next messages"
           >
             <ChevronRight className="w-4 h-4" />
           </Button>
         </div>
       </div>
 
-      <div className="relative overflow-hidden">
-        {/* Gradient masks for edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+      <div className="relative overflow-hidden rounded-xl border border-line bg-card/30 p-6">
+        {/* Gradient masks for smooth edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-card/30 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-card/30 to-transparent z-10 pointer-events-none"></div>
         
         <div 
           ref={scrollContainerRef}
-          className="flex space-x-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          className="space-y-4 h-80 overflow-hidden"
         >
-          {visibleMessages.map((message) => (
+          {visibleMessages.map((message, index) => (
             <div 
               key={`${message.id}-${currentIndex}`}
-              className={`flex-shrink-0 snap-start ${message.isAgent ? 'justify-start' : 'justify-end'} flex`}
+              className={`flex ${message.isAgent ? 'justify-start' : 'justify-end'} animate-fade-in`}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div 
-                className={`max-w-xs p-4 rounded-2xl ${
-                  message.isAgent 
-                    ? 'bg-primary text-white' 
-                    : 'bg-muted text-muted-foreground'
-                } shadow-card`}
+                className={`
+                  max-w-[80%] p-3 rounded-2xl text-sm leading-relaxed
+                  ${
+                    message.isAgent
+                      ? `${agentBubbleClass} ml-8 rounded-br-md`
+                      : 'bg-muted text-foreground mr-8 rounded-bl-md'
+                  }
+                `}
               >
-                <p className="text-sm leading-relaxed">{message.text}</p>
-                <p className={`text-xs mt-2 ${
-                  message.isAgent 
-                    ? 'text-white/70' 
-                    : 'text-muted-foreground/70'
-                }`}>
+                <p>{message.text}</p>
+                <p className={`text-xs mt-2 opacity-70`}>
                   {message.timestamp}
                 </p>
               </div>
@@ -147,23 +147,21 @@ export const ChatShowcase = () => {
         </div>
       </div>
 
-      {/* Pagination dots */}
-      <div className="flex justify-center space-x-2 mt-4">
-        {Array.from({ length: Math.ceil(sampleMessages.length / 2) }, (_, i) => (
+      {/* Pagination Dots */}
+      <div className="flex justify-center space-x-2 mt-6">
+        {Array.from({ length: Math.ceil(messages.length / 4) }).map((_, i) => (
           <button
             key={i}
-            onClick={() => {
-              setIsAutoScrolling(false);
-              setCurrentIndex(i * 2);
-            }}
+            onClick={() => setCurrentIndex(i * 4)}
             className={`w-2 h-2 rounded-full transition-colors ${
-              Math.floor(currentIndex / 2) === i 
-                ? 'bg-primary' 
-                : 'bg-muted-foreground/30'
+              Math.floor(currentIndex / 4) === i 
+                ? (theme === "aqua" ? 'bg-aqua' : 'bg-ember') 
+                : 'bg-muted'
             }`}
+            aria-label={`Go to page ${i + 1}`}
           />
         ))}
       </div>
     </div>
   );
-};
+}

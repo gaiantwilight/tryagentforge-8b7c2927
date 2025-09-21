@@ -111,6 +111,9 @@ const Index = () => {
               <button onClick={() => scrollToSection('pricing')} className="text-muted-foreground hover:text-foreground transition-colors">
                 Pricing
               </button>
+              <Link to="/wellness" className="text-muted-foreground hover:text-foreground transition-colors">
+                Wellness
+              </Link>
               <Link to="/affiliate" className="text-muted-foreground hover:text-foreground transition-colors">
                 Affiliate
               </Link>

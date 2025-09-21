@@ -214,4 +214,39 @@ All colors MUST be HSL.
       padding: 0 16px;
     }
   }
+
+  /* Water canvas styles */
+  .water-canvas {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .water-ripple {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: ripple-expand 6s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes ripple-expand {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .water-ripple {
+      animation: none;
+      opacity: 0;
+    }
+  }
 }

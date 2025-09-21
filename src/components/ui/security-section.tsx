@@ -1,79 +1,92 @@
 import React from 'react';
-import { Shield, CheckCircle, Eye, Lock, Globe, UserCheck } from 'lucide-react';
+import { Shield, CheckCircle, Eye, Lock, Globe, UserCheck, ArrowRight } from 'lucide-react';
+import { ScrollReveal } from './scroll-reveal';
 
-const securityFeatures = [
-  { icon: Shield, text: "Evaluation harness (red-team checks)" },
-  { icon: Lock, text: "Policy & guardrails" },
-  { icon: Eye, text: "Audit logs" },
-  { icon: Globe, text: "Region gating" },
-  { icon: UserCheck, text: "Human approval gates" }
-];
+interface SecuritySectionProps {
+  theme?: "ember" | "aqua";
+}
 
-const timelineSteps = [
-  { label: "Ingest", description: "Data collection & processing" },
-  { label: "Evals", description: "Automated testing & validation" },
-  { label: "Guardrails", description: "Safety & policy enforcement" },
-  { label: "Shadow mode", description: "Real-world testing" },
-  { label: "Launch", description: "Production deployment" }
-];
+export function SecuritySection({ theme = "ember" }: SecuritySectionProps) {
+  const securityFeatures = [
+    { icon: Shield, text: "Evaluation harness (red-team checks)" },
+    { icon: Lock, text: "Policy & guardrails" },
+    { icon: Eye, text: "Audit logs" },
+    { icon: Globe, text: "Region gating" },
+    { icon: UserCheck, text: "Human approval gates" }
+  ];
 
-export const SecuritySection = () => {
+  const timelineSteps = [
+    { label: "Ingest", description: "Data collection & processing" },
+    { label: "Evals", description: "Automated testing & validation" },
+    { label: "Guardrails", description: "Safety & policy enforcement" },
+    { label: "Shadow mode", description: "Real-world testing" },
+    { label: "Launch", description: "Production deployment" }
+  ];
+
   return (
-    <div className="grid lg:grid-cols-2 gap-12 items-start">
-      {/* Security Features */}
-      <div className="space-y-6">
-        <div className="space-y-4">
-          {securityFeatures.map((feature, index) => (
-            <div key={index} className="flex items-center space-x-4">
-              <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                <feature.icon className="w-4 h-4 text-primary" />
-              </div>
-              <span className="text-foreground">{feature.text}</span>
-            </div>
-          ))}
-        </div>
-        
-        <div className="pt-4 border-t border-line">
-          <p className="text-muted-foreground text-sm">
-            Every AgentForge deployment goes through a preflight battery.
+    <section className="py-20 bg-card/50">
+      <div className="container-premium">
+        <ScrollReveal className="text-center space-y-4 mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold">Ship safely: security, evals & approvals</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Every deployment goes through comprehensive security and evaluation checks before going live.
           </p>
-        </div>
-      </div>
+        </ScrollReveal>
 
-      {/* Timeline */}
-      <div className="space-y-6">
-        <h4 className="text-lg font-sora font-semibold mb-6">Deployment Pipeline</h4>
-        
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-6 top-8 bottom-0 w-0.5 bg-line"></div>
-          
-          <div className="space-y-6">
-            {timelineSteps.map((step, index) => (
-              <div key={index} className="relative flex items-start space-x-4">
-                {/* Step indicator */}
-                <div className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center ${
-                  index === timelineSteps.length - 1 
-                    ? 'bg-gradient-ember text-white' 
-                    : 'bg-card border border-line text-muted-foreground'
-                }`}>
-                  {index === timelineSteps.length - 1 ? (
-                    <CheckCircle className="w-5 h-5" />
-                  ) : (
-                    <span className="text-sm font-bold">{index + 1}</span>
-                  )}
-                </div>
-                
-                {/* Step content */}
-                <div className="flex-1 pt-2">
-                  <h5 className="font-sora font-semibold text-foreground">{step.label}</h5>
-                  <p className="text-sm text-muted-foreground mt-1">{step.description}</p>
-                </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Security Features */}
+          <ScrollReveal>
+            <div className="space-y-6">
+              <div className="space-y-4">
+                {securityFeatures.map((feature, index) => (
+                  <div key={index} className="flex items-center space-x-4">
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                      theme === "aqua" ? "bg-aqua/20 text-aqua" : "bg-ember/20 text-ember"
+                    }`}>
+                      <feature.icon className="w-4 h-4" />
+                    </div>
+                    <span className="text-foreground">{feature.text}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+              
+              <div className="pt-4 border-t border-line">
+                <p className="text-muted-foreground text-sm">
+                  Every AgentForge deployment goes through a preflight battery.
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Timeline */}
+          <ScrollReveal delay={200}>
+            <div className="space-y-6">
+              <h4 className="text-lg font-sora font-semibold mb-6">Deployment Pipeline</h4>
+              
+              <div className="space-y-6">
+                {timelineSteps.map((step, index) => (
+                  <div key={index} className="flex items-center space-x-4">
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                      theme === "aqua" ? "bg-aqua/20" : "bg-ember/20"
+                    }`}>
+                      <span className={`font-semibold text-sm ${
+                        theme === "aqua" ? "text-aqua" : "text-ember"
+                      }`}>{index + 1}</span>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-medium text-sm">{step.label}</h4>
+                      <p className="text-xs text-muted-foreground">{step.description}</p>
+                    </div>
+                    {index < timelineSteps.length - 1 && (
+                      <ArrowRight className="w-4 h-4 text-muted-foreground" />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
+}

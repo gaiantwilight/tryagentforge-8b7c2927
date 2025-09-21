@@ -1,11 +1,17 @@
 import React from 'react';
 
-export const StructuredData = () => {
+interface StructuredDataProps {
+  isWellness?: boolean;
+}
+
+export const StructuredData = ({ isWellness = false }: StructuredDataProps) => {
   const localBusinessData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "AgentForge",
-    "description": "AI agents for bookings & customer support. 24/7 website chat, SMS follow-ups, and on-brand answers that convert.",
+    "description": isWellness 
+      ? "AI agents for wellness and healthcare practices in Garden Grove, CA. HIPAA-compliant booking, patient support, and automated follow-ups."
+      : "AI agents for bookings & customer support. 24/7 website chat, SMS follow-ups, and on-brand answers that convert.",
     "url": "https://agentforge.com",
     "telephone": "+1-XXX-XXX-XXXX",
     "address": {
@@ -26,8 +32,12 @@ export const StructuredData = () => {
         "name": "Orange County"
       }
     ],
-    "serviceType": "AI Customer Support",
-    "priceRange": "$999-$2449"
+    "serviceType": isWellness ? "Healthcare Technology" : "AI Customer Support",
+    "priceRange": "$999-$2449",
+    ...(isWellness && {
+      "medicalSpecialty": ["Wellness", "Cryotherapy", "Red Light Therapy", "Infrared Sauna", "Cold Plunge", "Hyperbaric"],
+      "additionalType": ["Medical Practice Management", "HIPAA Compliant AI"]
+    })
   };
 
   const aggregateRatingData = {
@@ -41,7 +51,46 @@ export const StructuredData = () => {
     }
   };
 
-  const reviewsData = [
+  const reviewsData = isWellness ? [
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Dr. Sarah Martinez"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "AgentForge helped us reduce no-shows by 40% and improved patient satisfaction significantly. The HIPAA-compliant AI handles intake perfectly and sounds natural.",
+      "datePublished": "2024-01-15",
+      "itemReviewed": {
+        "@type": "Organization",
+        "name": "AgentForge"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Michael Chen"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": "Our wellness clinic saw a 35% increase in bookings after implementing AgentForge. The AI understands our cryotherapy and infrared sauna services perfectly.",
+      "datePublished": "2024-02-03",
+      "itemReviewed": {
+        "@type": "Organization",
+        "name": "AgentForge"
+      }
+    }
+  ] : [
     {
       "@context": "https://schema.org",
       "@type": "Review",
