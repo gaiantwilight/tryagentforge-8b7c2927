@@ -12,6 +12,7 @@ import { ChatShowcase } from '@/components/ui/chat-showcase';
 import { AnnouncementBanner } from '@/components/ui/announcement-banner';
 import { MobileNav } from '@/components/ui/mobile-nav';
 import { SoundManager } from '@/components/ui/sound-manager';
+import { ScrollableChatDemo } from '@/components/ui/scrollable-chat-demo';
 import { 
   ArrowRight, 
   Shield, 
@@ -511,16 +512,22 @@ export default function Wellness() {
         <section id="demo" className="py-20 bg-card/30">
           <div className="container-premium">
             <ScrollReveal className="text-center space-y-4 mb-16">
-              <h2 className="text-2xl lg:text-3xl font-bold">Try it live</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold">Live AI Conversations</h2>
               <p className="text-xl text-muted-foreground">
-                Experience our wellness AI agents in action
+                See our wellness AI agents in action with real conversation examples
               </p>
             </ScrollReveal>
 
             <div className="grid lg:grid-cols-2 gap-12">
               <ScrollReveal>
+                <div className="space-y-6">
+                  <ScrollableChatDemo theme="aqua" />
+                </div>
+              </ScrollReveal>
+              
+              <ScrollReveal>
                 <Card className="p-8 bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border-aqua/20">
-                  <h3 className="text-2xl font-semibold mb-6 text-center">Lead capture form</h3>
+                  <h3 className="text-2xl font-semibold mb-6 text-center">Get Your Demo</h3>
                   {/* GHL_FORM_EMBED */}
                   <div className="space-y-4 text-center">
                     <p className="text-muted-foreground">Contact form will be embedded here</p>
