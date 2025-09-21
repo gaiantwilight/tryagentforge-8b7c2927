@@ -82,7 +82,7 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
       {/* Fullscreen Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-[70] bg-background/95 backdrop-blur-lg lg:hidden"
+          className="fixed inset-0 z-[70] bg-background backdrop-blur-lg lg:hidden"
           aria-hidden="true"
         >
           {/* Header */}

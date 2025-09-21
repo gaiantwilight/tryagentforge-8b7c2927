@@ -444,41 +444,9 @@ export default function Wellness() {
           </p>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          <ScrollReveal>
-            <div className="space-y-6">
-              <ScrollableChatDemo theme="aqua" />
-            </div>
-          </ScrollReveal>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <ScrollReveal>
-              <Card className="p-8 bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border-aqua/20">
-                <h3 className="text-2xl font-semibold mb-6 text-center">Get Your Demo</h3>
-                {/* GHL_FORM_EMBED */}
-                <div className="space-y-4 text-center">
-                  <p className="text-muted-foreground">Contact form will be embedded here</p>
-                  <Button variant="aqua-default" className="w-full">
-                    Contact Sales
-                  </Button>
-                </div>
-              </Card>
-            </ScrollReveal>
-
-            <ScrollReveal delay={200}>
-              <Card className="p-8 bg-gradient-to-br from-aqua/5 to-aqua-glow/10 border-aqua/20">
-                <h3 className="text-2xl font-semibold mb-6 text-center">Book a Consult</h3>
-                {/* GHL_CALENDAR_EMBED */}
-                <div className="space-y-4 text-center">
-                  <p className="text-muted-foreground">Calendar booking will be embedded here</p>
-                  <Button variant="aqua-outline" className="w-full">
-                    Schedule Demo
-                  </Button>
-                </div>
-              </Card>
-            </ScrollReveal>
-          </div>
-        </div>
+        <ScrollReveal>
+          <ScrollableChatDemo theme="aqua" />
+        </ScrollReveal>
       </div>
     </section>
 
