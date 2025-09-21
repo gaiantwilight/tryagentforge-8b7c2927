@@ -201,7 +201,7 @@ export default function Blockchain() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ScrollReveal delay={100}>
-              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm card-hover-glow">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <Users className="w-6 h-6 text-white" />
                 </div>
@@ -227,7 +227,7 @@ export default function Blockchain() {
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm card-hover-glow">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <Code className="w-6 h-6 text-white" />
                 </div>
@@ -253,7 +253,7 @@ export default function Blockchain() {
             </ScrollReveal>
 
             <ScrollReveal delay={300}>
-              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm card-hover-glow">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
@@ -279,7 +279,7 @@ export default function Blockchain() {
             </ScrollReveal>
 
             <ScrollReveal delay={400}>
-              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm card-hover-glow">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
@@ -305,7 +305,7 @@ export default function Blockchain() {
             </ScrollReveal>
 
             <ScrollReveal delay={500}>
-              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm card-hover-glow">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <Database className="w-6 h-6 text-white" />
                 </div>
@@ -331,7 +331,7 @@ export default function Blockchain() {
             </ScrollReveal>
 
             <ScrollReveal delay={600}>
-              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm">
+              <Card className="p-6 border-slate-600 hover-lift bg-slate-800/80 backdrop-blur-sm card-hover-glow">
                 <div className="w-12 h-12 bg-gradient-ember rounded-xl flex items-center justify-center mb-4">
                   <HeadphonesIcon className="w-6 h-6 text-white" />
                 </div>
@@ -369,14 +369,14 @@ export default function Blockchain() {
 
             <TabsContent value="defi" className="space-y-8">
               <div className="grid md:grid-cols-2 gap-8">
-                <Card className="p-6 border-line">
+                <Card className="p-6 border-line card-hover-glow">
                   <Coins className="w-8 h-8 text-primary mb-4" />
                   <h3 className="text-xl font-bold mb-3">Memecoin Launches</h3>
                   <p className="text-muted-foreground">
                     Automated community management, launch announcements, price updates, and scam protection during high-traffic token launches.
                   </p>
                 </Card>
-                <Card className="p-6 border-line">
+                <Card className="p-6 border-line card-hover-glow">
                   <TrendingUp className="w-8 h-8 text-primary mb-4" />
                   <h3 className="text-xl font-bold mb-3">DeFi Protocols</h3>
                   <p className="text-muted-foreground">

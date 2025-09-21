@@ -139,9 +139,30 @@ export default function Index() {
                 <Link to="/" className="text-ember font-medium">
                   Home
                 </Link>
-                <Link to="/wellness" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Wellness
-                </Link>
+                <div className="relative group">
+                  <button className="text-muted-foreground hover:text-foreground transition-colors flex items-center">
+                    Industries
+                    <svg className="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-line rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <div className="py-2">
+                      <Link 
+                        to="/wellness" 
+                        className="block px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-card/50 transition-colors"
+                      >
+                        Wellness & Performance
+                      </Link>
+                      <Link 
+                        to="/blockchain" 
+                        className="block px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-card/50 transition-colors"
+                      >
+                        Blockchain & AI
+                      </Link>
+                    </div>
+                  </div>
+                </div>
                 <button onClick={() => scrollToSection('how-it-works')} className="text-muted-foreground hover:text-foreground transition-colors">
                   How it Works
                 </button>
@@ -185,13 +206,18 @@ export default function Index() {
               <ScrollReveal className="space-y-8">
                 <div className="space-y-6">
                   <h1 className="text-4xl lg:text-6xl font-sora font-bold leading-tight">
-                    AI agents for 
-                    <span className="text-ember"> bookings </span>
-                    & support
+                    AI Agents That Capture Missed Bookings & Grow Revenue — Built for Modern Businesses.
                   </h1>
-                  <p className="text-xl text-muted-foreground leading-relaxed max-w-lg">
-                    24/7 website chat, SMS follow-ups, and on-brand answers that convert visitors into bookings.
+                  <p className="text-xl text-muted-foreground leading-relaxed max-w-lg mb-4">
+                    Trusted by Wellness Centers, Blockchain Teams, and more.
                   </p>
+                  <Link 
+                    to="/wellness" 
+                    className="inline-flex items-center text-ember hover:text-ember/80 font-medium transition-colors"
+                  >
+                    Explore Industries
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
