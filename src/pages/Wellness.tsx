@@ -91,7 +91,7 @@ export default function Wellness() {
 
   const pricingTiers = [
     {
-      name: "Wellness Starter",
+      name: "Starter",
       price: "$999",
       setup: "$499 setup",
       features: [
@@ -103,7 +103,7 @@ export default function Wellness() {
       ]
     },
     {
-      name: "Wellness Growth",
+      name: "Growth",
       price: "$1,749",
       setup: "$749 setup",
       features: [
@@ -116,7 +116,7 @@ export default function Wellness() {
       popular: true
     },
     {
-      name: "Wellness Pro",
+      name: "Pro",
       price: "$2,449",
       setup: "$999 setup",
       features: [

@@ -333,7 +333,7 @@ export default function Index() {
             <div className="grid lg:grid-cols-4 gap-8">
               {[
                 {
-                  name: "Wellness Starter",
+                  name: "Starter",
                   price: "$999",
                   period: "/month",
                   setup: "+ $499 setup",
@@ -348,7 +348,7 @@ export default function Index() {
                   popular: false
                 },
                 {
-                  name: "Wellness Growth",
+                  name: "Growth",
                   price: "$1,749", 
                   period: "/month",
                   setup: "+ $749 setup",
@@ -363,7 +363,7 @@ export default function Index() {
                   popular: true
                 },
                 {
-                  name: "Wellness Pro",
+                  name: "Pro",
                   price: "$2,449",
                   period: "/month",
                   setup: "+ $999 setup", 

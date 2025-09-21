@@ -503,7 +503,7 @@ export default function Blockchain() {
               }`}>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold">Wellness Starter</h3>
+                    <h3 className="text-xl font-bold">Starter</h3>
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-baseline space-x-1">
@@ -559,7 +559,7 @@ export default function Blockchain() {
                 </Badge>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold">Wellness Growth</h3>
+                    <h3 className="text-xl font-bold">Growth</h3>
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-baseline space-x-1">
@@ -616,7 +616,7 @@ export default function Blockchain() {
               }`}>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold">Wellness Pro</h3>
+                    <h3 className="text-xl font-bold">Pro</h3>
                   </div>
                   <div className="space-y-1">
                     <div className="flex items-baseline space-x-1">

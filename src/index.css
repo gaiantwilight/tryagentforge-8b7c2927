@@ -40,10 +40,10 @@ All colors MUST be HSL.
     --radius: 1.25rem; /* 20px for premium feel */
     
     /* Custom Design Tokens */
-    --ember: 17 100% 59%;      /* #FF6A2C */
-    --ember-glow: 17 100% 75%; /* #FFB88A */
-    --aqua: 187 85% 53%;       /* #1DD1A1 - wellness aqua */
-    --aqua-glow: 187 85% 70%;  /* #4FDDB7 - lighter aqua */
+    --ember: 17 100% 70%;      /* #FF966B - lighter ember */
+    --ember-glow: 17 100% 85%; /* #FFCAB5 - much lighter ember */
+    --aqua: 187 85% 65%;       /* #4FDDB7 - lighter wellness aqua */
+    --aqua-glow: 187 85% 80%;  /* #8EE7D0 - much lighter aqua */
     --ink: 213 33% 93%;        /* #EAF0F6 */
     --line: 0 0% 100% / 8%;    /* rgba(255,255,255,.08) */
     
