@@ -224,8 +224,6 @@ export default function Index() {
                   title="AgentForge Hero Demo"
                   className="bg-gradient-card shadow-premium"
                 />
-                  </video>
-                </div>
               </ScrollReveal>
             </div>
           </div>
