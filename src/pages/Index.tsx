@@ -96,6 +96,9 @@ export default function Index() {
 
               {/* Desktop Navigation */}
               <nav className="hidden lg:flex items-center space-x-8">
+                <Link to="/" className="text-ember font-medium">
+                  Home
+                </Link>
                 <button onClick={() => scrollToSection('how-it-works')} className="text-muted-foreground hover:text-foreground transition-colors">
                   How it Works
                 </button>

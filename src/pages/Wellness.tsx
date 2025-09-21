@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -28,6 +28,8 @@ import {
 } from 'lucide-react';
 
 export default function Wellness() {
+  const [selectedPlan, setSelectedPlan] = useState<number>(1); // Default to Growth plan
+
   const benefits = [
     {
       icon: <Clock className="w-6 h-6" />,
@@ -239,6 +241,26 @@ export default function Wellness() {
           </div>
         </header>
 
+        {/* Personal Passion Section */}
+        <section className="py-16 bg-card/20">
+          <div className="container-premium max-w-4xl mx-auto text-center">
+            <ScrollReveal>
+              <div className="space-y-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-aqua/20 to-aqua-glow/30 rounded-full flex items-center justify-center mx-auto">
+                  <Heart className="w-8 h-8 text-aqua" />
+                </div>
+                <h2 className="text-2xl lg:text-3xl font-bold">From passion to practice</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                  My deep passion for health and wellness—red light therapy, infrared saunas, cryotherapy, and all the modalities that help people feel their best—led me to pivot my business. I dream of one day opening my own wellness center, and that vision drives everything we build at AgentForge.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                  While we specialize in <strong className="text-aqua">cryotherapy, red light, infrared sauna, cold plunge, and hyperbaric</strong> treatments, we proudly serve gyms, dental practices, yoga studios, IV therapy clinics, med-spas, massage centers, and the entire wellness ecosystem.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           <WaterCanvas className="absolute inset-0 opacity-20" />
@@ -406,11 +428,16 @@ export default function Wellness() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               {pricingTiers.map((tier, index) => (
                 <ScrollReveal key={index} delay={index * 100}>
-                  <Card className={`p-8 h-full relative ${
-                    tier.popular 
-                      ? 'border-aqua bg-gradient-to-br from-aqua/5 to-aqua-glow/10' 
-                      : 'border-line'
-                  }`}>
+                  <Card 
+                    className={`p-8 h-full relative cursor-pointer transition-all duration-300 ${
+                      selectedPlan === index
+                        ? 'border-aqua bg-gradient-to-br from-aqua/5 to-aqua-glow/10 shadow-lg ring-2 ring-aqua/20' 
+                        : tier.popular
+                        ? 'border-aqua/50 bg-gradient-to-br from-aqua/3 to-aqua-glow/5'
+                        : 'border-line hover:border-aqua/30'
+                    }`}
+                    onClick={() => setSelectedPlan(index)}
+                  >
                     {tier.popular && (
                       <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                         <span className="bg-aqua text-background px-4 py-1 rounded-full text-sm font-medium">
@@ -438,11 +465,15 @@ export default function Wellness() {
                     </ul>
                     
                     <Button 
-                      onClick={() => scrollToSection('demo')}
-                      className={`w-full ${
-                        tier.popular 
-                          ? 'bg-aqua hover:bg-aqua-glow text-background' 
-                          : 'bg-muted hover:bg-muted/80'
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedPlan(index);
+                        scrollToSection('demo');
+                      }}
+                      className={`w-full transition-all duration-300 focus-visible:ring-2 focus-visible:ring-aqua focus-visible:ring-offset-2 ${
+                        selectedPlan === index || tier.popular
+                          ? 'bg-aqua hover:bg-aqua-glow text-background shadow-lg' 
+                          : 'bg-muted hover:bg-aqua hover:text-background'
                       }`}
                     >
                       {tier.name === 'Custom' ? 'Contact Sales' : 'Get Started'}
