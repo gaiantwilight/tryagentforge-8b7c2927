@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ProgressBar } from '@/components/ui/progress-bar';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
-import { ChatShowcase } from '@/components/ui/enhanced-chat-showcase';
+import { ScrollableChatDemo } from '@/components/ui/scrollable-chat-demo';
 import { StructuredData } from '@/components/ui/structured-data';
 import { SoundManager } from '@/components/ui/sound-manager';
 import { 
@@ -99,6 +99,12 @@ export default function Index() {
                 <Link to="/" className="text-ember font-medium">
                   Home
                 </Link>
+                <Link to="/wellness" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Wellness
+                </Link>
+                <Link to="/blockchain" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Blockchain
+                </Link>
                 <button onClick={() => scrollToSection('how-it-works')} className="text-muted-foreground hover:text-foreground transition-colors">
                   How it Works
                 </button>
@@ -108,9 +114,6 @@ export default function Index() {
                 <button onClick={() => scrollToSection('pricing')} className="text-muted-foreground hover:text-foreground transition-colors">
                   Pricing
                 </button>
-                <Link to="/wellness" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Wellness
-                </Link>
                 <Link to="/affiliate" className="text-muted-foreground hover:text-foreground transition-colors">
                   Affiliate
                 </Link>
@@ -118,12 +121,6 @@ export default function Index() {
 
               {/* CTA Buttons */}
               <div className="hidden lg:flex items-center space-x-4">
-                <Button variant="ghost" size="sm" asChild>
-                  <a href="tel:+1-XXX-XXX-XXXX">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call Us
-                  </a>
-                </Button>
                 <Button 
                   variant="default" 
                   size="sm"
@@ -148,7 +145,7 @@ export default function Index() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <ScrollReveal className="space-y-8">
                 <div className="space-y-6">
-                  <h1 className="text-5xl lg:text-7xl font-sora font-bold leading-tight">
+                  <h1 className="text-4xl lg:text-6xl font-sora font-bold leading-tight">
                     AI agents for 
                     <span className="text-ember"> bookings </span>
                     & support
@@ -200,17 +197,17 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Dynamic Chat Showcase */}
+        {/* Live AI Conversations */}
         <section id="live-demo" className="py-16 bg-gradient-to-br from-card/30 to-card/10">
           <div className="container-premium">
             <ScrollReveal className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold">Live Chat Demo</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold">AI in Action</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                See how our AI handles real conversations
+                Watch real conversations unfold across different scenarios
               </p>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <ChatShowcase />
+              <ScrollableChatDemo />
             </ScrollReveal>
           </div>
         </section>
@@ -219,7 +216,7 @@ export default function Index() {
         <section id="how-it-works" className="py-20 lg:py-32">
           <div className="container-premium">
             <ScrollReveal className="text-center mb-16">
-              <h2 className="text-4xl lg:text-6xl font-sora font-bold mb-6">
+              <h2 className="text-3xl lg:text-5xl font-sora font-bold mb-6">
                 How it works
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -263,7 +260,7 @@ export default function Index() {
         <section id="features" className="py-20 lg:py-32 bg-card/30">
           <div className="container-premium">
             <ScrollReveal className="text-center mb-16">
-              <h2 className="text-4xl lg:text-6xl font-sora font-bold mb-6">
+              <h2 className="text-3xl lg:text-5xl font-sora font-bold mb-6">
                 What you get
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -298,7 +295,7 @@ export default function Index() {
         <section className="py-20 lg:py-32">
           <div className="container-premium">
             <ScrollReveal className="text-center mb-16">
-              <h2 className="text-4xl lg:text-6xl font-sora font-bold mb-6">
+              <h2 className="text-3xl lg:text-5xl font-sora font-bold mb-6">
                 Proven results
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -330,7 +327,7 @@ export default function Index() {
         <section id="pricing" className="py-20 lg:py-32 bg-card/30">
           <div className="container-premium">
             <ScrollReveal className="text-center mb-16">
-              <h2 className="text-4xl lg:text-6xl font-sora font-bold mb-6">
+              <h2 className="text-3xl lg:text-5xl font-sora font-bold mb-6">
                 Simple, transparent pricing
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -469,7 +466,7 @@ export default function Index() {
         <section id="demo-form" className="py-20 lg:py-32">
           <div className="container-premium">
             <ScrollReveal className="text-center mb-16">
-              <h2 className="text-4xl lg:text-6xl font-sora font-bold mb-6">
+              <h2 className="text-3xl lg:text-5xl font-sora font-bold mb-6">
                 Get started today
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -566,7 +563,6 @@ export default function Index() {
                 <h4 className="font-semibold">Contact</h4>
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <p>Garden Grove, CA</p>
-                  <a href="tel:+1-XXX-XXX-XXXX" className="block hover:text-primary transition-colors">+1-XXX-XXX-XXXX</a>
                 </div>
               </div>
             </div>

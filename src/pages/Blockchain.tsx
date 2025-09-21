@@ -174,7 +174,7 @@ export default function Blockchain() {
       <section id="services" className="py-20 bg-slate-50 dark:bg-slate-900">
         <div className="container-premium">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Blockchain & Web3 Services</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold">Blockchain & Web3 Services</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Comprehensive AI solutions for the modern crypto ecosystem
             </p>
@@ -335,7 +335,7 @@ export default function Blockchain() {
       <section className="py-20">
         <div className="container-premium">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Real-World Applications</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold">Real-World Applications</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               See how blockchain projects leverage our AI agents
             </p>
@@ -412,7 +412,7 @@ export default function Blockchain() {
       <section className="py-20 bg-slate-50 dark:bg-slate-900">
         <div className="container-premium">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Security & Trust</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold">Security & Trust</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Built for the highest security standards in crypto
             </p>
@@ -469,7 +469,7 @@ export default function Blockchain() {
       <section id="pricing" className="py-20 bg-slate-50 dark:bg-slate-900">
         <div className="container-premium">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Blockchain-Focused Pricing</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold">Blockchain-Focused Pricing</h2>
             <p className="text-lg text-muted-foreground">
               Choose the perfect plan for your Web3 project
             </p>
@@ -755,7 +755,7 @@ export default function Blockchain() {
       <section className="py-20">
         <div className="container-premium">
           <ScrollReveal className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold">Frequently Asked Questions</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold">Frequently Asked Questions</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Everything you need to know about our blockchain solutions
             </p>
@@ -805,7 +805,7 @@ export default function Blockchain() {
       <section id="demo" className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
         <div className="container-premium text-center">
           <ScrollReveal>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-6">
               Ready to Secure Your Web3 Community?
             </h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">

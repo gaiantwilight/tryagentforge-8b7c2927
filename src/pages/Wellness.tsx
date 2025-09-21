@@ -316,7 +316,7 @@ export default function Wellness() {
         <section className="py-16 bg-card/30">
           <div className="container-premium">
             <ScrollReveal className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold">See it in action</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold">See it in action</h2>
               <p className="text-lg text-muted-foreground">
                 Watch how our AI handles real wellness inquiries
               </p>
@@ -332,7 +332,7 @@ export default function Wellness() {
         <section id="benefits" className="py-20">
           <div className="container-premium">
             <ScrollReveal className="text-center space-y-4 mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold">Transform your wellness practice</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold">Transform your wellness practice</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Reduce administrative burden while improving patient outcomes with AI that understands healthcare.
               </p>
@@ -508,7 +508,7 @@ export default function Wellness() {
         <section id="demo" className="py-20 bg-card/30">
           <div className="container-premium">
             <ScrollReveal className="text-center space-y-4 mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold">Try it live</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold">Try it live</h2>
               <p className="text-xl text-muted-foreground">
                 Experience our wellness AI agents in action
               </p>
@@ -548,7 +548,7 @@ export default function Wellness() {
         <section className="py-20">
           <div className="container-premium">
             <ScrollReveal className="text-center space-y-4 mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold">Frequently asked questions</h2>
+              <h2 className="text-2xl lg:text-3xl font-bold">Frequently asked questions</h2>
             </ScrollReveal>
 
             <div className="max-w-3xl mx-auto space-y-6">
