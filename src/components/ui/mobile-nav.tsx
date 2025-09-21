@@ -187,7 +187,7 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
                 className="w-full"
                 asChild
               >
-                <a href="tel:+1-XXX-XXX-XXXX">
+                <a href="tel:+1-714-475-7502">
                   <Phone className="w-4 h-4 mr-2" />
                   Call Us
                 </a>

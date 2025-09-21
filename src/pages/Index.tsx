@@ -6,6 +6,7 @@ import { ProgressBar } from '@/components/ui/progress-bar';
 import { ScrollReveal } from '@/components/ui/scroll-reveal';
 import { ScrollableChatDemo } from '@/components/ui/scrollable-chat-demo';
 import { StructuredData } from '@/components/ui/structured-data';
+import { MobileNav } from '@/components/ui/mobile-nav';
 import { SoundManager } from '@/components/ui/sound-manager';
 import { 
   ArrowRight, 
@@ -128,6 +129,9 @@ export default function Index() {
                   Get a Demo
                 </Button>
               </div>
+
+              {/* Mobile Navigation */}
+              <MobileNav onBookDemo={() => scrollToSection('demo-form')} />
             </div>
           </div>
         </header>
