@@ -82,8 +82,8 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
       {/* Fullscreen Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-[70] bg-white dark:bg-gray-900 border-r border-line shadow-2xl lg:hidden"
-          style={{ backgroundColor: 'var(--background)', opacity: 1 }}
+          className="fixed inset-0 z-[9999] !bg-white dark:!bg-gray-900 border-r border-line shadow-2xl lg:hidden"
+          style={{ backgroundColor: '#ffffff' }}
           aria-hidden="true"
         >
           {/* Header */}
