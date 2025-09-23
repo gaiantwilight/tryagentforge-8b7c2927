@@ -108,7 +108,7 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
           <nav className="p-6 space-y-2" role="navigation" aria-label="Mobile navigation">
             <Link
               to="/"
-              className="block py-4 px-4 text-lg font-medium hover:bg-muted rounded-lg transition-colors"
+              className="block py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Home
@@ -116,10 +116,10 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
             
             <Link
               to="/wellness"
-              className={`block py-4 px-4 text-lg font-medium rounded-lg transition-colors ${
+              className={`block py-4 px-4 text-lg font-medium transition-colors ${
                 isWellnessPage 
-                  ? 'text-aqua bg-aqua/10' 
-                  : 'hover:bg-muted'
+                  ? 'text-aqua' 
+                  : 'hover:text-primary'
               }`}
               onClick={() => setIsOpen(false)}
             >
@@ -128,7 +128,7 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
 
             <Link
               to="/blockchain"
-              className="block py-4 px-4 text-lg font-medium hover:bg-muted rounded-lg transition-colors"
+              className="block py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Blockchain
@@ -138,21 +138,21 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
               <>
                 <button
                   onClick={() => scrollToSection('how-it-works')}
-                  className="block w-full text-left py-4 px-4 text-lg font-medium hover:bg-muted rounded-lg transition-colors"
+                  className="block w-full text-left py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
                 >
                   How it Works
                 </button>
                 
                 <button
                   onClick={() => scrollToSection('features')}
-                  className="block w-full text-left py-4 px-4 text-lg font-medium hover:bg-muted rounded-lg transition-colors"
+                  className="block w-full text-left py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
                 >
                   Features
                 </button>
                 
                 <button
                   onClick={() => scrollToSection('pricing')}
-                  className="block w-full text-left py-4 px-4 text-lg font-medium hover:bg-muted rounded-lg transition-colors"
+                  className="block w-full text-left py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
                 >
                   Pricing
                 </button>
@@ -161,7 +161,7 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
 
             <Link
               to="/affiliate"
-              className="block py-4 px-4 text-lg font-medium hover:bg-muted rounded-lg transition-colors"
+              className="block py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Affiliate
