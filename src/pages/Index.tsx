@@ -618,8 +618,20 @@ export default function Index() {
                 <div className="space-y-2 text-sm">
                   <button onClick={() => scrollToSection('how-it-works')} className="block text-muted-foreground hover:text-primary transition-colors">How it Works</button>
                   <button onClick={() => scrollToSection('features')} className="block text-muted-foreground hover:text-primary transition-colors">Features</button>
-                  <Link to="/wellness" className="block text-muted-foreground hover:text-primary transition-colors">Wellness</Link>
-                  <Link to="/blockchain" className="block text-muted-foreground hover:text-primary transition-colors">Blockchain</Link>
+                  <Link 
+                    to="/wellness" 
+                    className="block text-muted-foreground hover:text-primary transition-colors"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    Wellness
+                  </Link>
+                  <Link 
+                    to="/blockchain" 
+                    className="block text-muted-foreground hover:text-primary transition-colors"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  >
+                    Blockchain
+                  </Link>
                 </div>
               </div>
               

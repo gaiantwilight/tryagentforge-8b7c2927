@@ -83,6 +83,7 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
       {isOpen && (
         <div 
           className="fixed inset-0 z-[70] bg-white dark:bg-gray-900 border-r border-line shadow-2xl lg:hidden"
+          style={{ backgroundColor: 'var(--background)', opacity: 1 }}
           aria-hidden="true"
         >
           {/* Header */}
