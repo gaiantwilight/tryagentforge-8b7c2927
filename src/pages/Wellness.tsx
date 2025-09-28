@@ -102,7 +102,7 @@ export default function Wellness() {
         "Lead capture + Calendar booking",
         "Booking recovery (missed booking follow-ups)",
         "Up to 1,000 conversations/mo included",
-        "Adjustments: every 60 days",
+        "Fine-tuning: every 60 days",
         "No reporting"
       ]
     },
@@ -116,7 +116,7 @@ export default function Wellness() {
         "All Starter features",
         "Advanced booking recovery (multi-channel, escalations)",
         "Up to 3,000 conversations/mo included",
-        "Adjustments: monthly",
+        "Fine-tuning: monthly",
         "Monthly reporting included"
       ],
       popular: true
@@ -131,13 +131,13 @@ export default function Wellness() {
         "All Growth features",
         "Up to 5,000 conversations/mo included",
         "Custom integrations & analytics dashboards",
-        "Adjustments: every 2 weeks",
+        "Fine-tuning: every 2 weeks",
         "Weekly reporting"
       ]
     },
     {
       name: "CUSTOM",
-      price: "Contact us",
+      price: "Enterprise",
       period: "",
       setup: "",
       features: [
@@ -211,8 +211,6 @@ export default function Wellness() {
         >
           Skip to content
         </a>
-        
-        <AnnouncementBanner theme="aqua" onBookNow={() => scrollToSection('demo')} />
         
         {/* SEO Meta Tags */}
         <head>
@@ -290,7 +288,7 @@ export default function Wellness() {
 
               {/* Desktop CTA Buttons */}
               <div className="hidden lg:flex items-center space-x-4">
-                <Button variant="ghost" size="sm" asChild>
+                <Button variant="call" asChild>
                   <a href="tel:+1-714-475-7502">
                     <Phone className="w-4 h-4 mr-2" />
                     Call Us
@@ -681,6 +679,7 @@ export default function Wellness() {
                   <Link to="/affiliate" className="block text-muted-foreground hover:text-aqua transition-colors">Affiliate</Link>
                   <Link to="/privacy" className="block text-muted-foreground hover:text-aqua transition-colors">Privacy</Link>
                   <Link to="/terms" className="block text-muted-foreground hover:text-aqua transition-colors">Terms</Link>
+                  <Link to="/affiliate" className="block text-muted-foreground hover:text-aqua transition-colors">Affiliate</Link>
                 </div>
               </div>
               

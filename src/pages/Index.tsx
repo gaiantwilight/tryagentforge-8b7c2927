@@ -176,6 +176,12 @@ export default function Index() {
 
               {/* CTA Buttons */}
               <div className="hidden lg:flex items-center space-x-4">
+                <Button variant="call" asChild>
+                  <a href="tel:+1-714-475-7502">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Call Us
+                  </a>
+                </Button>
                 <Button 
                   variant="default" 
                   size="sm"
@@ -206,7 +212,7 @@ export default function Index() {
               <ScrollReveal className="space-y-8">
                 <div className="space-y-6">
                   <h1 className="text-4xl lg:text-6xl font-sora font-bold leading-tight">
-                    AI Agents That Capture Missed Bookings & Grow Revenue — Built for Modern Businesses.
+                    AI Agents That Convert Visitors Into Customers 24/7
                   </h1>
                   <p className="text-xl text-muted-foreground leading-relaxed max-w-lg mb-4">
                     Trusted by Wellness Centers, Blockchain Teams, and more.
@@ -331,9 +337,9 @@ export default function Index() {
                 { icon: MessageSquare, title: "Live website chat", description: "Instant responses to visitor questions with smart lead qualification." },
                 { icon: Smartphone, title: "SMS follow-ups", description: "Automated sequences that nurture leads and reduce no-shows." },
                 { icon: BookOpen, title: "Knowledge-grounding", description: "Responses anchored in your actual documentation and policies." },
-                { icon: BarChart3, title: "Analytics dashboard", description: "Track performance, conversation quality, and conversion metrics." },
+                { icon: BarChart3, title: "Testing and fine-tuning", description: "Regular adjustments and optimizations included in most plans to improve performance." },
                 { icon: Users, title: "Human handoff", description: "Seamless escalation to your team when needed." },
-                { icon: Shield, title: "Compliance-aware", description: "PII-conscious responses that protect your business." }
+                { icon: Shield, title: "Verity Aegis", description: "Our proprietary evaluation system ensures safe, compliant AI responses." }
               ].map((feature, index) => (
                 <ScrollReveal key={index} delay={index * 75}>
                   <Card className="p-6 card-hover-glow bg-gradient-card border-line">
@@ -405,7 +411,7 @@ export default function Index() {
                     "Lead capture + Calendar booking",
                     "Booking recovery (missed booking follow-ups)",
                     "Up to 1,000 conversations/mo included",
-                    "Adjustments: every 60 days",
+                    "Fine-tuning: every 60 days",
                     "No reporting"
                   ],
                   cta: "Get Started",
@@ -421,7 +427,7 @@ export default function Index() {
                     "All Starter features",
                     "Advanced booking recovery (multi-channel, escalations)",
                     "Up to 3,000 conversations/mo included",
-                    "Adjustments: monthly",
+                    "Fine-tuning: monthly",
                     "Monthly reporting included"
                   ],
                   cta: "Get Started",
@@ -437,7 +443,7 @@ export default function Index() {
                     "All Growth features",
                     "Up to 5,000 conversations/mo included",
                     "Custom integrations & analytics dashboards",
-                    "Adjustments: every 2 weeks",
+                    "Fine-tuning: every 2 weeks",
                     "Weekly reporting"
                   ],
                   cta: "Get Started",
@@ -445,7 +451,7 @@ export default function Index() {
                 },
                 {
                   name: "CUSTOM",
-                  price: "Contact us",
+                  price: "Enterprise",
                   period: "",
                   setup: "",
                   features: [
@@ -479,9 +485,8 @@ export default function Index() {
                     <div className="text-center space-y-4 mb-8">
                       <h3 className="text-xl font-sora font-bold">{tier.name}</h3>
                       <div>
-                        <div className="text-4xl font-sora font-bold">{tier.price}</div>
+                        <div className="text-4xl font-sora font-bold">{tier.price}<span className="text-lg font-normal text-muted-foreground">{tier.period}</span></div>
                         {tier.setup && <div className="text-sm text-muted-foreground mt-1">{tier.setup}</div>}
-                        <div className="text-sm text-muted-foreground">{tier.period}</div>
                       </div>
                     </div>
                     
@@ -641,6 +646,7 @@ export default function Index() {
                   <Link to="/" className="block text-muted-foreground hover:text-primary transition-colors">Home</Link>
                   <Link to="/privacy" className="block text-muted-foreground hover:text-primary transition-colors">Privacy</Link>
                   <Link to="/terms" className="block text-muted-foreground hover:text-primary transition-colors">Terms</Link>
+                  <Link to="/affiliate" className="block text-muted-foreground hover:text-primary transition-colors">Affiliate</Link>
                 </div>
               </div>
               
