@@ -14,20 +14,7 @@ import { AnnouncementBanner } from '@/components/ui/announcement-banner';
 import { MobileNav } from '@/components/ui/mobile-nav';
 import { SoundManager } from '@/components/ui/sound-manager';
 import { ScrollableChatDemo } from '@/components/ui/scrollable-chat-demo';
-import { 
-  ArrowRight, 
-  Shield, 
-  Clock, 
-  Users, 
-  TrendingUp,
-  CheckCircle,
-  Zap,
-  Heart,
-  Brain,
-  Activity,
-  Phone,
-  Star
-} from 'lucide-react';
+import { ArrowRight, Shield, Clock, Users, TrendingUp, CircleCheck as CheckCircle, Zap, Heart, Brain, Activity, Phone, Star } from 'lucide-react';
 
 export default function Wellness() {
   const [selectedPlan, setSelectedPlan] = useState<number>(1); // Default to Growth plan
@@ -102,7 +89,7 @@ export default function Wellness() {
         "Lead capture + Calendar booking",
         "Booking recovery (missed booking follow-ups)",
         "Up to 1,000 conversations/mo included",
-        "Fine-tuning: every 60 days",
+        "Adjustments: every 60 days",
         "No reporting"
       ]
     },
@@ -116,7 +103,7 @@ export default function Wellness() {
         "All Starter features",
         "Advanced booking recovery (multi-channel, escalations)",
         "Up to 3,000 conversations/mo included",
-        "Fine-tuning: monthly",
+        "Adjustments: monthly",
         "Monthly reporting included"
       ],
       popular: true
@@ -131,13 +118,13 @@ export default function Wellness() {
         "All Growth features",
         "Up to 5,000 conversations/mo included",
         "Custom integrations & analytics dashboards",
-        "Fine-tuning: every 2 weeks",
+        "Adjustments: every 2 weeks",
         "Weekly reporting"
       ]
     },
     {
       name: "CUSTOM",
-      price: "Enterprise",
+      price: "Contact us",
       period: "",
       setup: "",
       features: [
@@ -211,6 +198,8 @@ export default function Wellness() {
         >
           Skip to content
         </a>
+        
+        <AnnouncementBanner theme="aqua" onBookNow={() => scrollToSection('demo')} />
         
         {/* SEO Meta Tags */}
         <head>
@@ -288,7 +277,7 @@ export default function Wellness() {
 
               {/* Desktop CTA Buttons */}
               <div className="hidden lg:flex items-center space-x-4">
-                <Button variant="call" asChild>
+                <Button variant="ghost" size="sm" asChild>
                   <a href="tel:+1-714-475-7502">
                     <Phone className="w-4 h-4 mr-2" />
                     Call Us
@@ -679,7 +668,6 @@ export default function Wellness() {
                   <Link to="/affiliate" className="block text-muted-foreground hover:text-aqua transition-colors">Affiliate</Link>
                   <Link to="/privacy" className="block text-muted-foreground hover:text-aqua transition-colors">Privacy</Link>
                   <Link to="/terms" className="block text-muted-foreground hover:text-aqua transition-colors">Terms</Link>
-                  <Link to="/affiliate" className="block text-muted-foreground hover:text-aqua transition-colors">Affiliate</Link>
                 </div>
               </div>
               

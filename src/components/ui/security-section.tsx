@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, CheckCircle, Eye, Lock, Globe, UserCheck, ArrowRight } from 'lucide-react';
+import { Shield, CircleCheck as CheckCircle, Eye, Lock, Globe, UserCheck, ArrowRight } from 'lucide-react';
 import { ScrollReveal } from './scroll-reveal';
 
 interface SecuritySectionProps {
@@ -8,7 +8,7 @@ interface SecuritySectionProps {
 
 export function SecuritySection({ theme = "ember" }: SecuritySectionProps) {
   const securityFeatures = [
-    { icon: Shield, text: "Evaluation harness (red-team checks)" },
+    { icon: Shield, text: "Verity Aegis evaluation system" },
     { icon: Lock, text: "Policy & guardrails" },
     { icon: Eye, text: "Audit logs" },
     { icon: Globe, text: "Region gating" },
@@ -27,9 +27,9 @@ export function SecuritySection({ theme = "ember" }: SecuritySectionProps) {
     <section className="py-20 bg-card/50">
       <div className="container-premium">
         <ScrollReveal className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold">Ship safely: security, evals & approvals</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold">Ship safely: Verity Aegis security & evaluations</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Every deployment goes through comprehensive security and evaluation checks before going live.
+            Every deployment goes through our proprietary Verity Aegis evaluation system before going live.
           </p>
         </ScrollReveal>
 
@@ -52,7 +52,7 @@ export function SecuritySection({ theme = "ember" }: SecuritySectionProps) {
               
               <div className="pt-4 border-t border-line">
                 <p className="text-muted-foreground text-sm">
-                  Every AgentForge deployment goes through a preflight battery.
+                  Every AgentForge deployment goes through our Verity Aegis preflight evaluation system.
                 </p>
               </div>
             </div>

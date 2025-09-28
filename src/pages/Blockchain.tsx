@@ -10,30 +10,7 @@ import { VideoHero } from '@/components/ui/video-hero';
 import { StructuredData } from '@/components/ui/structured-data';
 import { MobileNav } from '@/components/ui/mobile-nav';
 import { Testimonials } from '@/components/ui/testimonials';
-import { 
-  Menu,
-  ArrowRight, 
-  MessageSquare, 
-  Code,
-  Phone,
-  BookOpen,
-  Shield,
-  CheckCircle,
-  Calendar,
-  Zap,
-  Users,
-  Bot,
-  Lock,
-  Globe,
-  TrendingUp,
-  AlertTriangle,
-  Coins,
-  Database,
-  FileText,
-  HeadphonesIcon
-} from 'lucide-react';
-
-export default function Blockchain() {
+import { Menu, ArrowRight, MessageSquare, Code, Phone, BookOpen, Shield, CircleCheck as CheckCircle, Calendar, Zap, Users, Bot, Lock, Globe, TrendingUp, TriangleAlert as AlertTriangle, Coins, Database, FileText, Headphones as HeadphonesIcon, Star } from 'lucide-react't default function Blockchain() {
   const [selectedPlan, setSelectedPlan] = useState('growth');
   const [isAnnual, setIsAnnual] = useState(false);
 

@@ -9,20 +9,7 @@ import { VideoHero } from '@/components/ui/video-hero';
 import { StructuredData } from '@/components/ui/structured-data';
 import { MobileNav } from '@/components/ui/mobile-nav';
 import { SoundManager } from '@/components/ui/sound-manager';
-import { 
-  ArrowRight, 
-  MessageSquare, 
-  Zap, 
-  Phone,
-  BookOpen,
-  Smartphone,
-  Target,
-  BarChart3,
-  Users,
-  Shield,
-  CheckCircle,
-  Calendar
-} from 'lucide-react';
+import { ArrowRight, MessageSquare, Zap, Phone, BookOpen, Smartphone, Target, ChartBar as BarChart3, Users, Shield, CircleCheck as CheckCircle, Calendar } from 'lucide-react';
 
 export default function Index() {
   const [selectedPlan, setSelectedPlan] = useState(1); // Default to Growth plan

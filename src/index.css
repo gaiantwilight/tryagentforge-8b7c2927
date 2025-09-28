@@ -284,4 +284,14 @@ All colors MUST be HSL.
       transform: translateY(100px);
     }
   }
+
+  /* Blockchain hover effects */
+  .blockchain-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .blockchain-hover:hover {
+    border-color: hsl(var(--ember) / 0.5);
+    box-shadow: 0 8px 32px -8px hsl(var(--ember) / 0.2);
+  }
 }

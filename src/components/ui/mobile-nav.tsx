@@ -82,23 +82,22 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
       {/* Fullscreen Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-[9999] !bg-white dark:!bg-gray-900 border-r border-line shadow-2xl lg:hidden"
-          style={{ backgroundColor: '#ffffff' }}
+          className="fixed inset-0 z-[9999] bg-black border-r border-line shadow-2xl lg:hidden"
           aria-hidden="true"
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-line">
+          <div className="flex items-center justify-between p-6 border-b border-gray-800">
             <div className="flex items-center space-x-3">
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
                 isWellnessPage ? 'bg-gradient-to-br from-aqua to-aqua-glow' : 'bg-gradient-ember'
               }`}>
                 <span className="text-white font-bold text-sm">A</span>
               </div>
-              <span className="font-sora font-bold text-xl">AgentForge</span>
+              <span className="font-sora font-bold text-xl text-white">AgentForge</span>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="w-11 h-11 flex items-center justify-center rounded-lg hover:bg-muted transition-colors"
+              className="w-11 h-11 flex items-center justify-center rounded-lg hover:bg-gray-800 transition-colors text-white"
               aria-label="Close navigation menu"
             >
               <X className="w-6 h-6" />
@@ -109,7 +108,7 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
           <nav className="p-6 space-y-2" role="navigation" aria-label="Mobile navigation">
             <Link
               to="/"
-              className="block py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
+              className="block py-4 px-4 text-lg font-medium text-white hover:text-primary transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Home
@@ -120,7 +119,7 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
               className={`block py-4 px-4 text-lg font-medium transition-colors ${
                 isWellnessPage 
                   ? 'text-aqua' 
-                  : 'hover:text-primary'
+                  : 'text-white hover:text-primary'
               }`}
               onClick={() => setIsOpen(false)}
             >
@@ -129,7 +128,7 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
 
             <Link
               to="/blockchain"
-              className="block py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
+              className="block py-4 px-4 text-lg font-medium text-white hover:text-primary transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Blockchain
@@ -139,21 +138,21 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
               <>
                 <button
                   onClick={() => scrollToSection('how-it-works')}
-                  className="block w-full text-left py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
+                  className="block w-full text-left py-4 px-4 text-lg font-medium text-white hover:text-primary transition-colors"
                 >
                   How it Works
                 </button>
                 
                 <button
                   onClick={() => scrollToSection('features')}
-                  className="block w-full text-left py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
+                  className="block w-full text-left py-4 px-4 text-lg font-medium text-white hover:text-primary transition-colors"
                 >
                   Features
                 </button>
                 
                 <button
                   onClick={() => scrollToSection('pricing')}
-                  className="block w-full text-left py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
+                  className="block w-full text-left py-4 px-4 text-lg font-medium text-white hover:text-primary transition-colors"
                 >
                   Pricing
                 </button>
@@ -162,7 +161,7 @@ export function MobileNav({ onBookDemo }: MobileNavProps) {
 
             <Link
               to="/affiliate"
-              className="block py-4 px-4 text-lg font-medium hover:text-primary transition-colors"
+              className="block py-4 px-4 text-lg font-medium text-white hover:text-primary transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Affiliate
